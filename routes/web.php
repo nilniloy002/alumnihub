@@ -19,12 +19,16 @@ use App\Http\Controllers\AlumniController;
 |
 */
 
-Route::get('/', function () {
-    $readmePath = base_path('README.md');
+// Route::get('/', function () {
+//     $readmePath = base_path('README.md');
 
-    return view('welcome', [
-        'readmeContent' => Str::markdown(file_get_contents($readmePath)),
-    ]);
+//     return view('welcome', [
+//         'readmeContent' => Str::markdown(file_get_contents($readmePath)),
+//     ]);
+// });
+
+Route::get('/', function () {
+    return view('welcome');
 });
 // Login with OTP Routes
 Route::prefix('/otp')->middleware('guest')->name('otp.')->controller(LoginWithOTPController::class)->group(function(){
