@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alumni Management System</title>
+  <title>HFB Alumni Management System</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="{{ asset('admin/favicon/fav.png') }}" type="image/png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <script>
     tailwind.config = {
@@ -73,10 +74,10 @@
 
   <!-- Header -->
   <header class="flex justify-between items-center px-6 py-4 bg-primary shadow-lg">
-    <h1 class="text-2xl font-bold text-white">Alumni Management System</h1>
+    <h1 class="text-2xl font-bold text-white">HFB Alumni Management System</h1>
     <nav class="space-x-4">
       <a href="#" class="text-white hover:underline font-medium">Alumni Registration</a>
-      <a href="#" class="text-white hover:underline font-medium">Login Portal</a>
+      <a href="{{ route('login') }}" class="text-white hover:underline font-medium">Login Portal</a>
     </nav>
   </header>
 
@@ -104,53 +105,51 @@
     
     <div class="container mx-auto px-6 relative z-10">
       <div class="text-center mb-12">
-        <h2 class="text-4xl font-bold text-dark mb-4 animate-fade-in">Welcome Alumni!</h2>
-        <p class="text-xl text-gray-600 max-w-2xl mx-auto animate-fade-in animate-delay-200">Celebrating excellence and lifelong connections</p>
+        <h2 class="text-4xl font-bold text-dark mb-4 animate-fade-in">Welcome to HFB Alumni Management System!</h2>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto animate-fade-in animate-delay-200">Connecting alumni across generations and geographies</p>
         
         <!-- Animated Button -->
         <div class="mt-8 animate-bounce animate-infinite animate-duration-2000">
           <button id="celebrate-btn" class="bg-secondary hover:bg-dark text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition duration-300 flex items-center mx-auto">
-            <i class="fas fa-graduation-cap mr-2"></i> Our Management
+            <i class="fas fa-graduation-cap mr-2"></i> Our Leadership Team
           </button>
         </div>
       </div>
 
       <!-- Leadership Cards -->
       <div class="flex flex-col md:flex-row justify-center items-center gap-8 mt-16">
-        <!-- CEO Card -->
+        <!-- MD Card -->
         <div class="leader-card bg-white rounded-xl p-6 w-full md:w-80 text-center transform hover:scale-105 transition duration-300">
           <div class="relative mb-4">
-            <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="CEO" 
+            <img src="{{ asset('images/team/1.png') }}" alt="Managing Director" 
                  class="w-32 h-32 mx-auto rounded-full border-4 border-secondary object-cover">
-            <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-secondary text-white px-4 py-1 rounded-full text-sm font-bold">CEO</div>
+            <!-- <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-secondary text-white px-4 py-1 rounded-full text-sm font-bold">CEO</div> -->
           </div>
-          <h3 class="text-xl font-semibold text-primary">Michael Johnson</h3>
-          <p class="text-gray-600">Chief Executive Officer</p>
-          <p class="text-gray-500 text-sm mt-2">Class of 2005</p>
+          <h3 class="text-sm font-semibold text-primary">Dr. Hakim Md. Yousuf Harun Bhuiyan</h3>
+          <p class="text-gray-600 text-sm">Managing Director, Chief Mutawali </p>
+          <p class="text-gray-500 text-sm mt-2">Hamdard Laboratories (Waqf) Bangladesh</p>
         </div>
 
-        <!-- COO Card -->
+        <!-- Chief Advisor Card -->
         <div class="leader-card bg-white rounded-xl p-6 w-full md:w-80 text-center transform hover:scale-105 transition duration-300">
           <div class="relative mb-4">
-            <img src="https://randomuser.me/api/portraits/women/63.jpg" alt="COO" 
+            <img src="{{ asset('images/team/2.png') }}" alt="Chief Advisor" 
                  class="w-32 h-32 mx-auto rounded-full border-4 border-secondary object-cover">
-            <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-secondary text-white px-4 py-1 rounded-full text-sm font-bold">COO</div>
           </div>
-          <h3 class="text-xl font-semibold text-primary">Sarah Williams</h3>
-          <p class="text-gray-600">Chief Operating Officer</p>
-          <p class="text-gray-500 text-sm mt-2">Class of 2010</p>
+          <h3 class="text-sm font-semibold text-primary">Professor Hakim Kamrun Nahar Harun</h3>
+          <p class="text-gray-600 text-sm">Chief Advisor</p>
+          <p class="text-gray-500 text-sm mt-2">Hamdard University Bangladesh</p>
         </div>
 
-        <!-- CTO Card -->
+        <!-- Director Card -->
         <div class="leader-card bg-white rounded-xl p-6 w-full md:w-80 text-center transform hover:scale-105 transition duration-300">
           <div class="relative mb-4">
-            <img src="https://randomuser.me/api/portraits/men/42.jpg" alt="CTO" 
+            <img src="{{ asset('images/team/3.png') }}" alt="Director" 
                  class="w-32 h-32 mx-auto rounded-full border-4 border-secondary object-cover">
-            <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-secondary text-white px-4 py-1 rounded-full text-sm font-bold">CTO</div>
           </div>
-          <h3 class="text-xl font-semibold text-primary">David Chen</h3>
-          <p class="text-gray-600">Chief Technology Officer</p>
-          <p class="text-gray-500 text-sm mt-2">Class of 2008</p>
+          <h3 class="text-sm font-semibold text-primary">Brig Gen(retd) Mahbub Anowar, SUP, PSC</h3>
+          <p class="text-gray-600 text-sm">Director</p>
+          <p class="text-gray-500 text-sm mt-2">Hamdard Foundation Bangladesh</p>
         </div>
       </div>
     </div>
@@ -161,28 +160,28 @@
     <h2 class="text-center text-2xl font-bold text-dark mb-8">Our Institutions</h2>
     <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 px-6">
       <div class="bg-white shadow-md p-4 rounded-lg text-center hover:shadow-xl transition duration-300">
-        <img src="https://logo.clearbit.com/harvard.edu" alt="Institution" class="w-16 h-16 mx-auto mb-2">
-        <p class="text-sm font-medium text-gray-700">Harvard University</p>
+        <img src="{{ asset('images/institute/4.png') }}" alt="HUB" class="w-24 h-24 mx-auto mb-2">
+        <p class="text-sm font-medium text-gray-700">Hamdard University Bangladesh</p>
       </div>
       <div class="bg-white shadow-md p-4 rounded-lg text-center hover:shadow-xl transition duration-300">
-        <img src="https://logo.clearbit.com/stanford.edu" alt="Institution" class="w-16 h-16 mx-auto mb-2">
-        <p class="text-sm font-medium text-gray-700">Stanford University</p>
+        <img src="{{ asset('images/institute/5.png') }}" alt="Hakim Said Eastern Medical College & Hospital" class="w-24 h-24 mx-auto mb-2">
+        <p class="text-sm font-medium text-gray-700">Hakim Said Eastern Medical College & Hospital</p>
       </div>
       <div class="bg-white shadow-md p-4 rounded-lg text-center hover:shadow-xl transition duration-300">
-        <img src="https://logo.clearbit.com/mit.edu" alt="Institution" class="w-16 h-16 mx-auto mb-2">
-        <p class="text-sm font-medium text-gray-700">MIT</p>
+        <img src="{{ asset('images/institute/6.png') }}" alt="Hamdard Unani Medical College & Hospital" class="w-24 h-24 mx-auto mb-2">
+        <p class="text-sm font-medium text-gray-700">Hamdard Unani Medical College & Hospital</p>
       </div>
       <div class="bg-white shadow-md p-4 rounded-lg text-center hover:shadow-xl transition duration-300">
-        <img src="https://logo.clearbit.com/ox.ac.uk" alt="Institution" class="w-16 h-16 mx-auto mb-2">
-        <p class="text-sm font-medium text-gray-700">Oxford University</p>
+        <img src="{{ asset('images/institute/7.png') }}" alt="Rawshan Jahan Eastern Medical College & Hospital" class="w-24 h-24 mx-auto mb-2">
+        <p class="text-sm font-medium text-gray-700">Rawshan Jahan Eastern Medical College & Hospital</p>
       </div>
       <div class="bg-white shadow-md p-4 rounded-lg text-center hover:shadow-xl transition duration-300">
-        <img src="https://logo.clearbit.com/cam.ac.uk" alt="Institution" class="w-16 h-16 mx-auto mb-2">
-        <p class="text-sm font-medium text-gray-700">Cambridge University</p>
+        <img src="{{ asset('images/institute/8.png') }}" alt="Hamdard Institute of Unani & Ayurvedic Medicine" class="w-24 h-24 mx-auto mb-2">
+        <p class="text-sm font-medium text-gray-700">Hamdard Institute of Unani & Ayurvedic Medicine</p>
       </div>
       <div class="bg-white shadow-md p-4 rounded-lg text-center hover:shadow-xl transition duration-300">
-        <img src="https://logo.clearbit.com/berkeley.edu" alt="Institution" class="w-16 h-16 mx-auto mb-2">
-        <p class="text-sm font-medium text-gray-700">UC Berkeley</p>
+        <img src="{{ asset('images/institute/9.png') }}" alt="Hamdard Public College" class="w-24 h-24 mx-auto mb-2">
+        <p class="text-sm font-medium text-gray-700">Hamdard Public College</p>
       </div>
     </div>
   </section>
@@ -193,35 +192,39 @@
       <h2 class="text-center text-3xl font-bold text-dark mb-8">Campus Memories</h2>
       <div class="masonry-grid">
         <div class="masonry-item">
-          <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
+          <img src="{{ asset('images/gallery/1.jpg') }}" 
                class="rounded-lg shadow-md w-full h-auto" alt="Graduation Ceremony">
         </div>
         <div class="masonry-item">
-          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
+          <img src="{{ asset('images/gallery/2.jpg') }}" 
                class="rounded-lg shadow-md w-full h-auto" alt="Students Studying">
         </div>
         <div class="masonry-item">
-          <img src="https://images.unsplash.com/photo-1541178735493-479c1a27ed24?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
+          <img src="{{ asset('images/gallery/3.jpg') }}" 
                class="rounded-lg shadow-md w-full h-auto" alt="Campus Building">
         </div>
         <div class="masonry-item">
-          <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
+          <img src="{{ asset('images/gallery/4.jpg') }}" 
                class="rounded-lg shadow-md w-full h-auto" alt="Sports Event">
         </div>
         <div class="masonry-item">
-          <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
+          <img src="{{ asset('images/gallery/5.jpg') }}" 
                class="rounded-lg shadow-md w-full h-auto" alt="Library">
         </div>
         <div class="masonry-item">
-          <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
+          <img src="{{ asset('images/gallery/6.jpg') }}" 
                class="rounded-lg shadow-md w-full h-auto" alt="Alumni Reunion">
         </div>
         <div class="masonry-item">
-          <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
+          <img src="{{ asset('images/gallery/7.jpg') }}" 
                class="rounded-lg shadow-md w-full h-auto" alt="Lecture Hall">
         </div>
         <div class="masonry-item">
-          <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
+          <img src="{{ asset('images/gallery/8.jpg') }}" 
+               class="rounded-lg shadow-md w-full h-auto" alt="Campus Grounds">
+        </div>
+        <div class="masonry-item">
+          <img src="{{ asset('images/gallery/9.jpg') }}" 
                class="rounded-lg shadow-md w-full h-auto" alt="Campus Grounds">
         </div>
       </div>
@@ -255,7 +258,7 @@
       <div class="mb-4 md:mb-0">
         <h3 class="text-xl font-bold text-green-300 mb-2">Alumni Connect</h3>
         <p class="text-green-100">Department of Computer Science & Engineering</p>
-        <p class="text-green-100 text-sm">University of Excellence</p>
+        <p class="text-green-100 text-sm">Hamdard University Bangladesh</p>
       </div>
       <div class="space-y-2">
         <p class="text-green-100"><i class="fas fa-envelope mr-2"></i> alumni@university.edu</p>
@@ -269,7 +272,7 @@
       </div>
     </div>
     <div class="border-t border-green-800 mt-4 pt-4 text-center text-sm text-green-200">
-      &copy; 2025 Alumni Management System | Department of CSE - University Hub | All rights reserved.
+      &copy; 2025 HFB Alumni Management System | Department of CSE - HUB | All rights reserved.
     </div>
   </footer>
   <script>
