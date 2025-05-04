@@ -22,7 +22,7 @@
                     @foreach($data as $institution)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
-                            <td><img src="{{ asset('/storage/' . $institution->institution_logo) }}" alt="" height="40"></td>
+                            <td><img src="{{ asset('public/storage/' . $institution->institution_logo) }}" alt="" height="40"></td>
                             <td>{{ $institution->institution_name }}</td>
                             <td>{{ ucfirst($institution->status) }}</td>
                             <td>
