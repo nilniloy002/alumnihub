@@ -127,7 +127,8 @@
           </div>
           <h3 class="text-sm font-semibold text-primary">Dr. Hakim Md. Yousuf Harun Bhuiyan</h3>
           <p class="text-gray-600 text-sm">Managing Director, Chief Mutawali </p>
-          <p class="text-gray-500 text-sm mt-2">Hamdard Laboratories (Waqf) Bangladesh</p>
+          <p class="text-gray-600 text-sm">Hamdard Laboratories (Waqf) Bangladesh</p>
+          <!-- <p class="text-gray-500 text-sm mt-2">Hamdard Laboratories (Waqf) Bangladesh</p> -->
         </div>
 
         <!-- Chief Advisor Card -->
@@ -136,9 +137,10 @@
             <img src="{{ asset('images/team/2.png') }}" alt="Chief Advisor" 
                  class="w-32 h-32 mx-auto rounded-full border-4 border-secondary object-cover">
           </div>
-          <h3 class="text-sm font-semibold text-primary">Professor Hakim Kamrun Nahar Harun</h3>
-          <p class="text-gray-600 text-sm">Chief Advisor</p>
-          <p class="text-gray-500 text-sm mt-2">Hamdard University Bangladesh</p>
+          <h3 class="text-sm font-semibold text-primary">Prof. Kamrun Hahar Paulin</h3>
+          <p class="text-gray-600 text-sm">Senior Director, Planning & Development </p>
+          <p class="text-gray-600 text-sm">Director, Marketing & Sales (Add. Resp.) </p>
+         <!-- <p class="text-gray-500 text-sm mt-2">Hamdard University Bangladesh</p> -->
         </div>
 
         <!-- Director Card -->
@@ -147,9 +149,10 @@
             <img src="{{ asset('images/team/3.png') }}" alt="Director" 
                  class="w-32 h-32 mx-auto rounded-full border-4 border-secondary object-cover">
           </div>
-          <h3 class="text-sm font-semibold text-primary">Brig Gen(retd) Mahbub Anowar, SUP, PSC</h3>
+          <h3 class="text-sm font-semibold text-primary">Brig Gen (retd.) Engr Mahbub Anowar</h3>
           <p class="text-gray-600 text-sm">Director</p>
-          <p class="text-gray-500 text-sm mt-2">Hamdard Foundation Bangladesh</p>
+          <p class="text-gray-600 text-sm">Hamdard Foundation</p>
+          <!-- <p class="text-gray-500 text-sm mt-2">Hamdard Foundation Bangladesh</p> -->
         </div>
       </div>
     </div>
