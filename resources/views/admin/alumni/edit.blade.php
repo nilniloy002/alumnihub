@@ -155,7 +155,7 @@
                                         <label for="religion">Religion</label>
                                         <select name="religion" id="religion" class="form-control" required>
                                             <option value="" disabled>Select Religion</option>
-                                            <option value="Muslim" {{ old('religion', $Alumni->religion) == 'Muslim' ? 'selected' : '' }}>Muslim</option>
+                                            <option value="Islam" {{ old('religion', $Alumni->religion) == 'Islam' ? 'selected' : '' }}>Islam</option>
                                             <option value="Hindu" {{ old('religion', $Alumni->religion) == 'Hindu' ? 'selected' : '' }}>Hindu</option>
                                             <option value="Buddhist" {{ old('religion', $Alumni->religion) == 'Buddhist' ? 'selected' : '' }}>Buddhist</option>
                                             <option value="Christian" {{ old('religion', $Alumni->religion) == 'Christian' ? 'selected' : '' }}>Christian</option>

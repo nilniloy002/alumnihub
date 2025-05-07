@@ -9,6 +9,8 @@ use App\Models\Degree;
 use App\Models\Program;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use App\Imports\AlumniImport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class AlumniController extends Controller
 {
@@ -46,7 +48,7 @@ class AlumniController extends Controller
             'passing_year' => 'required|integer|min:1900|max:' . (date('Y') + 1),
             'result' => 'required|numeric|between:0,5',
             'nationality' => 'required|string|max:100',
-            'religion' => 'required|in:Muslim,Hindu,Buddhist,Christian',
+            'religion' => 'required|in:Islam,Hindu,Buddhist,Christian',
             'gender' => 'required|in:Male,Female,Others',
             'marital_status' => 'required|in:Married,Unmarried',
             'current_occupation' => 'required|string|max:255',
@@ -94,7 +96,7 @@ class AlumniController extends Controller
             'passing_year' => 'required|integer|min:1900|max:' . (date('Y') + 1),
             'result' => 'required|numeric|between:0,5',
             'nationality' => 'required|string|max:100',
-            'religion' => 'required|in:Muslim,Hindu,Buddhist,Christian',
+            'religion' => 'required|in:Islam,Hindu,Buddhist,Christian',
             'gender' => 'required|in:Male,Female,Others',
             'marital_status' => 'required|in:Married,Unmarried',
             'current_occupation' => 'required|string|max:255',
@@ -151,4 +153,21 @@ class AlumniController extends Controller
         }
         return $options;
     }
+
+    public function importForm()
+    {
+        return view('admin.alumni.import');
+    }
+
+    public function import(Request $request)
+    {
+        $request->validate([
+            'import_file' => 'required|mimes:xlsx,xls,csv'
+        ]);
+
+        Excel::import(new AlumniImport, $request->file('import_file'));
+
+        return redirect()->route('admin.alumni.index')->with('success', 'Alumni imported successfully.');
+    }
+
 }

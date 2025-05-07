@@ -33,7 +33,7 @@
                 </a>
             </li>
 
-            @php $alumniCount = \App\Models\Alumni::count(); @endphp
+            <!-- @php $alumniCount = \App\Models\Alumni::count(); @endphp
             <li class="nav-item">
                 <a href="{{ route('admin.alumni.index') }}"
                 class="nav-link {{ Route::is('admin.alumni.*') ? 'active' : '' }}">
@@ -43,9 +43,42 @@
                         <span class="badge badge-info right">{{ $alumniCount }}</span>
                     </p>
                 </a>
+            </li> -->
+
+            @php 
+                $alumniCount = \App\Models\Alumni::count();
+                $isAlumniActive = Route::is('admin.alumni.*');
+                $isImportActive = Route::is('admin.alumni.import*');
+            @endphp
+
+            <li class="nav-item {{ $isAlumniActive ? 'menu-open' : '' }}">
+                <a href="#" class="nav-link {{ $isAlumniActive ? 'active' : '' }}">
+                    <i class="nav-icon fas fa-user-graduate"></i>
+                    <p>
+                        Alumni
+                        <!-- <span class="badge badge-info right">{{ $alumniCount }}</span> -->
+                        <i class="right fas fa-angle-down"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{ route('admin.alumni.index') }}" 
+                        class="nav-link {{ Route::is('admin.alumni.index') ? 'active' : '' }}">
+                            <!-- <i class="far fa-circle nav-icon"></i> -->
+                            <p>All Alumni</p>
+                            <span class="badge badge-info right">{{ $alumniCount }}</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('admin.alumni.importForm') }}" 
+                        class="nav-link {{ $isImportActive ? 'active' : '' }}">
+                            <!-- <i class="far fa-circle nav-icon"></i> -->
+                            <p>Import Alumni</p>
+                        </a>
+                    </li>
+                </ul>
             </li>
-
-
+            
             <li class="nav-item">
                 <a href="{{ route('admin.user.index') }}"
                     class="nav-link {{ Route::is('admin.user.index') ? 'active' : '' }}">

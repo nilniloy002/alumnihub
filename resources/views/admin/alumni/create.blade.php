@@ -148,7 +148,7 @@
                                         <label for="religion">Religion</label>
                                         <select name="religion" id="religion" class="form-control" required>
                                             <option value="" disabled selected>Select Religion</option>
-                                            <option value="Muslim" {{ old('religion')=='Muslim'?'selected':'' }}>Muslim</option>
+                                            <option value="Islam" {{ old('religion')=='Islam'?'selected':'' }}>Islam</option>
                                             <option value="Hindu" {{ old('religion')=='Hindu'?'selected':'' }}>Hindu</option>
                                             <option value="Buddhist" {{ old('religion')=='Buddhist'?'selected':'' }}>Buddhist</option>
                                             <option value="Christian" {{ old('religion')=='Christian'?'selected':'' }}>Christian</option>

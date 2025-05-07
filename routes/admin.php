@@ -31,7 +31,8 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'verified'])->group(
         Route::resource('degree', DegreeController::class);
         Route::resource('program', ProgramController::class);
         Route::resource('alumni', AlumniController::class);
-    
+        Route::get('alumni/import/form', [AlumniController::class, 'importForm'])->name('alumni.importForm');
+        Route::post('alumni/import', [AlumniController::class, 'import'])->name('alumni.import');
         Route::resource('product',ProductController::class);
         Route::get('/get/subcategory',[ProductController::class,'getsubcategory'])->name('getsubcategory');
         Route::get('/remove-external-img/{id}',[ProductController::class,'removeImage'])->name('remove.image');
