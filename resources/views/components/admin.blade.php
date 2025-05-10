@@ -1,12 +1,3 @@
-<!--
-/*!
- *   AdminLTE With Laravel
- *   Author: Nihir Zala
- *   Website: https://nihirz.netlify.app
- *   License: Open source - MIT <https://opensource.org/licenses/MIT>
- */
--->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,9 +11,9 @@
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     {{-- Favicons --}}
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('admin/favicon/apple-touch-icon.png') }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('admin/favicon/favicon-32x32.png') }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('admin/favicon/favicon-16x16.png') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('admin/favicon/fav.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('admin/favicon/fav.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('admin/favicon/fav.png') }}">
     <link rel="manifest" href="{{ asset('admin/favicon/site.webmanifest') }}">
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="{{ asset('admin/plugins/fontawesome-free/css/all.min.css') }}">
@@ -58,7 +49,7 @@
                         @if (Auth::user()->avatar != null)
                             <img src="{{ Auth::user()->avatar }}" class="img-circle elevation-2" alt="User Image">
                         @else
-                            <img src="{{ asset('admin/dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2"
+                            <img src="{{ asset('admin/favicon/fav.png') }}" class="img-circle elevation-2"
                                 alt="User Image">
                         @endif
                     </div>

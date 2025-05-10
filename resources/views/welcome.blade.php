@@ -73,11 +73,39 @@
 <body class="bg-gradient-to-br from-green-50 to-green-100 font-sans">
 
   <!-- Header -->
-  <header class="flex justify-between items-center px-6 py-4 bg-primary shadow-lg">
-    <h1 class="text-2xl font-bold text-white">HFB Alumni Management System</h1>
-    <nav class="space-x-4">
-      <a href="#" class="text-white hover:underline font-medium">Alumni Registration</a>
-      <a href="{{ route('login') }}" class="text-white hover:underline font-medium">Login Portal</a>
+  <header class="flex items-center justify-between px-6 py-3 bg-primary shadow-lg sticky top-0 z-50">
+    <!-- Logo and Branding -->
+    <div class="flex items-center space-x-3">
+      <a href="/" class="flex items-center">
+        <!-- Logo Image -->
+        <img src="{{ asset('admin/favicon/logo-01.png') }}" 
+            alt="HFB Logo" 
+            class="h-20 w-auto">  <!-- Adjust height as needed -->
+        
+        <!-- Text Logo/Brand Name - Hidden on mobile, shown on larger screens -->
+        <span class="hidden md:block ml-3">
+          <h1 class="text-xl font-bold text-white leading-tight">HFB Alumni</h1>
+          <p class="text-xs text-green-100">Management System</p>
+        </span>
+      </a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="flex items-center space-x-4">
+      <a href="#" 
+        class="text-white hover:text-green-200 font-medium px-3 py-2 rounded-md transition-colors duration-300
+                {{ request()->is('register') ? 'bg-green-700' : '' }}">
+        <i class="fas fa-user-plus mr-1"></i>
+        <span class="hidden sm:inline">Alumni Registration</span>
+      </a>
+      
+      <a href="{{ route('login') }}" 
+        class="bg-secondary hover:bg-green-700 text-white font-medium px-4 py-2 rounded-md transition-colors duration-300
+                flex items-center">
+        <i class="fas fa-sign-in-alt mr-2"></i>
+        <span class="hidden sm:inline">Login Portal</span>
+        <span class="sm:hidden">Login</span>
+      </a>
     </nav>
   </header>
 
@@ -126,8 +154,8 @@
             <!-- <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-secondary text-white px-4 py-1 rounded-full text-sm font-bold">CEO</div> -->
           </div>
           <h3 class="text-sm font-semibold text-primary">Dr. Hakim Md. Yousuf Harun Bhuiyan</h3>
-          <p class="text-gray-600 text-sm">Managing Director, Chief Mutawali </p>
-          <p class="text-gray-600 text-sm">Hamdard Laboratories (Waqf) Bangladesh</p>
+          <p class="text-gray-600 text-sm">Chief Mutawalli & Managing Director, Hamdard Laboratories (Waqf) Bangladesh &  </p>
+          <p class="text-gray-600 text-sm">Secretary General, Hamdard Foundation Bangladesh</p>
           <!-- <p class="text-gray-500 text-sm mt-2">Hamdard Laboratories (Waqf) Bangladesh</p> -->
         </div>
 
@@ -140,6 +168,10 @@
           <h3 class="text-sm font-semibold text-primary">Prof. Kamrun Nahar Paulin</h3>
           <p class="text-gray-600 text-sm">Senior Director, Planning & Development </p>
           <p class="text-gray-600 text-sm">Director, Marketing & Sales (Add. Resp.) </p>
+         </br>
+         </br>
+         
+         
          <!-- <p class="text-gray-500 text-sm mt-2">Hamdard University Bangladesh</p> -->
         </div>
 
@@ -149,9 +181,12 @@
             <img src="{{ asset('images/team/3.png') }}" alt="Director" 
                  class="w-32 h-32 mx-auto rounded-full border-4 border-secondary object-cover">
           </div>
-          <h3 class="text-sm font-semibold text-primary">Brig Gen (retd.) Engr Mahbub Anowar</h3>
-          <p class="text-gray-600 text-sm">Director</p>
-          <p class="text-gray-600 text-sm">Hamdard Foundation</p>
+          <h3 class="text-sm font-semibold text-primary">Brig Gen (Retd) Engr Mahbub Anowar</h3>
+          <p class="text-gray-600 text-xs">SUP, psc, B.Sc & M.Sc Engg, MDS, GOBE, EMBA, FIEB</p>
+          <!-- <p class="text-gray-600 text-sm">Director</p> -->
+          <p class="text-gray-600 text-sm">Director, Hamdard Foundation Bangladesh</p>
+           </br>
+         </br>
           <!-- <p class="text-gray-500 text-sm mt-2">Hamdard Foundation Bangladesh</p> -->
         </div>
       </div>
