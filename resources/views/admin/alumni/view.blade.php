@@ -19,8 +19,9 @@
                                 @if($Alumni->student_photo)
                                     <img src="{{ asset('storage/'. $Alumni->	student_photo) }}" class="img-thumbnail" width="200" alt="Photo">
                                     
+                                    
                                 @else
-                                    <img src="{{ asset('no-image.png') }}" class="img-thumbnail" width="200" alt="No Photo">
+                                    <img src="{{ asset('admin/favicon/dummy.jpg') }}" class="img-thumbnail" width="200" alt="No Photo">
                                 @endif
                             </div>
 

@@ -23,7 +23,12 @@
                     @foreach($data as $al)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
-                        <td><img src="{{ asset('storage/' .  $al->	student_photo) }}" alt="" height="40"></td>
+                        <td>
+                            <img src="{{ $al->student_photo ? asset('storage/' . $al->student_photo) : asset('admin/favicon/dummy.jpg') }}" 
+                                alt="Student Photo" 
+                                height="40"
+                                class="rounded-full border border-gray-200">
+                        </td>
                         <td>{{ $al->name_of_student }}</td>
                         <td>{{ $al->institution->institution_name }}</td>
                         <td>{{ $al->degree->degree_name }}</td>
