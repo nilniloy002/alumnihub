@@ -182,11 +182,13 @@
                  class="w-32 h-32 mx-auto rounded-full border-4 border-secondary object-cover">
           </div>
           <h3 class="text-sm font-semibold text-primary">Brig Gen (Retd) Engr Mahbub Anowar</h3>
-          <p class="text-gray-600 text-xs">SUP, psc, B.Sc & M.Sc Engg, MDS, GOBE, EMBA, FIEB</p>
+          <!-- <p class="text-gray-600 text-xs">SUP, psc, B.Sc & M.Sc Engg, MDS, GOBE, EMBA, FIEB</p> -->
+          <p class="text-gray-600 text-sm">SUP, PSC</p>
           <!-- <p class="text-gray-600 text-sm">Director</p> -->
           <p class="text-gray-600 text-sm">Director, Hamdard Foundation Bangladesh</p>
            </br>
          </br>
+         
           <!-- <p class="text-gray-500 text-sm mt-2">Hamdard Foundation Bangladesh</p> -->
         </div>
       </div>
