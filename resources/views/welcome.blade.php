@@ -246,11 +246,11 @@
                class="rounded-lg shadow-md w-full h-auto" alt="Sports Event">
         </div>
         <div class="masonry-item">
-          <img src="{{ asset('images/gallery/5.jpg') }}" 
+          <img src="{{ asset('images/gallery/11.jpg') }}" 
                class="rounded-lg shadow-md w-full h-auto" alt="Library">
         </div>
         <div class="masonry-item">
-          <img src="{{ asset('images/gallery/6.jpg') }}" 
+          <img src="{{ asset('images/gallery/10.jpg') }}" 
                class="rounded-lg shadow-md w-full h-auto" alt="Alumni Reunion">
         </div>
         <div class="masonry-item">
