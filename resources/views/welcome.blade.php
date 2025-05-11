@@ -201,22 +201,28 @@
         <img src="{{ asset('images/institute/4.png') }}" alt="HUB" class="w-24 h-24 mx-auto mb-2">
         <p class="text-sm font-medium text-gray-700">Hamdard University Bangladesh</p>
       </div>
-      <div class="bg-white shadow-md p-4 rounded-lg text-center hover:shadow-xl transition duration-300">
-        <img src="{{ asset('images/institute/5.png') }}" alt="Hakim Said Eastern Medical College & Hospital" class="w-24 h-24 mx-auto mb-2">
-        <p class="text-sm font-medium text-gray-700">Hakim Said Eastern Medical College & Hospital</p>
+
+       <div class="bg-white shadow-md p-4 rounded-lg text-center hover:shadow-xl transition duration-300">
+        <img src="{{ asset('images/institute/8.png') }}" alt="Hamdard Institute of Unani & Ayurvedic Medicine" class="w-24 h-24 mx-auto mb-2">
+        <p class="text-sm font-medium text-gray-700">Hamdard Institute of Unani & Ayurvedic Medicine</p>
       </div>
-      <div class="bg-white shadow-md p-4 rounded-lg text-center hover:shadow-xl transition duration-300">
-        <img src="{{ asset('images/institute/6.png') }}" alt="Hamdard Unani Medical College & Hospital" class="w-24 h-24 mx-auto mb-2">
-        <p class="text-sm font-medium text-gray-700">Hamdard Unani Medical College & Hospital</p>
-      </div>
+
       <div class="bg-white shadow-md p-4 rounded-lg text-center hover:shadow-xl transition duration-300">
         <img src="{{ asset('images/institute/7.png') }}" alt="Rawshan Jahan Eastern Medical College & Hospital" class="w-24 h-24 mx-auto mb-2">
         <p class="text-sm font-medium text-gray-700">Rawshan Jahan Eastern Medical College & Hospital</p>
       </div>
+
       <div class="bg-white shadow-md p-4 rounded-lg text-center hover:shadow-xl transition duration-300">
-        <img src="{{ asset('images/institute/8.png') }}" alt="Hamdard Institute of Unani & Ayurvedic Medicine" class="w-24 h-24 mx-auto mb-2">
-        <p class="text-sm font-medium text-gray-700">Hamdard Institute of Unani & Ayurvedic Medicine</p>
+        <img src="{{ asset('images/institute/6.png') }}" alt="Hamdard Unani Medical College & Hospital" class="w-24 h-24 mx-auto mb-2">
+        <p class="text-sm font-medium text-gray-700">Hamdard Unani Medical College & Hospital</p>
       </div>
+
+      <div class="bg-white shadow-md p-4 rounded-lg text-center hover:shadow-xl transition duration-300">
+        <img src="{{ asset('images/institute/5.png') }}" alt="Hakim Said Eastern Medical College & Hospital" class="w-24 h-24 mx-auto mb-2">
+        <p class="text-sm font-medium text-gray-700">Hakim Said Eastern Medical College & Hospital</p>
+      </div>
+      
+     
       <div class="bg-white shadow-md p-4 rounded-lg text-center hover:shadow-xl transition duration-300">
         <img src="{{ asset('images/institute/9.png') }}" alt="Hamdard Public College" class="w-24 h-24 mx-auto mb-2">
         <p class="text-sm font-medium text-gray-700">Hamdard Public College</p>
