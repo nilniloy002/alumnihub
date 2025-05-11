@@ -162,7 +162,7 @@
         <!-- Chief Advisor Card -->
         <div class="leader-card bg-white rounded-xl p-6 w-full md:w-80 text-center transform hover:scale-105 transition duration-300">
           <div class="relative mb-4">
-            <img src="{{ asset('images/team/2.png') }}" alt="Chief Advisor" 
+            <img src="{{ asset('images/team/sd.jpg') }}" alt="Chief Advisor" 
                  class="w-32 h-32 mx-auto rounded-full border-4 border-secondary object-cover">
           </div>
           <h3 class="text-sm font-semibold text-primary">Prof. Kamrun Nahar Paulin</h3>
@@ -178,7 +178,7 @@
         <!-- Director Card -->
         <div class="leader-card bg-white rounded-xl p-6 w-full md:w-80 text-center transform hover:scale-105 transition duration-300">
           <div class="relative mb-4">
-            <img src="{{ asset('images/team/3.png') }}" alt="Director" 
+            <img src="{{ asset('images/team/ds.jpg') }}" alt="Director" 
                  class="w-32 h-32 mx-auto rounded-full border-4 border-secondary object-cover">
           </div>
           <h3 class="text-sm font-semibold text-primary">Brig Gen (Retd) Engr Mahbub Anowar</h3>
