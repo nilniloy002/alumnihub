@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
 use App\Http\Controllers\DegreeController;
 use App\Http\Controllers\AlumniController;
+use App\Http\Controllers\HomeController;
 
 
 /*
@@ -59,6 +60,13 @@ Route::prefix('oauth/')->group(function(){
 Route::get('/get-degrees/{institution}', [DegreeController::class, 'getByInstitution']);
 Route::get('/get-programs/{degree}', [AlumniController::class,'getPrograms'])
 ->name('get.programs');
+
+Route::get('/rjemch', [HomeController::class, 'Rjemch']);
+Route::get('/humch', [HomeController::class, 'Humch']);
+Route::get('/hsemch', [HomeController::class, 'Hsemch']);
+Route::get('/hpc', [HomeController::class, 'Hpc']);
+Route::get('/hub', [HomeController::class, 'Hub']);
+Route::get('/hiuam', [HomeController::class, 'Hiuam']);
 
 // Auth routes
 require __DIR__.'/auth.php';

@@ -16,6 +16,13 @@
                 </a>
             </li>
             <li class="nav-item">
+                <a href="{{ route('admin.faculty.index') }}"
+                    class="nav-link {{ Route::is('admin.faculty.index') ? 'active' : '' }}">
+                    <i class="nav-icon fas fa-user-graduate"></i>
+                    <p>Faculty</p>
+                </a>
+            </li>
+            <li class="nav-item">
                 <a href="{{ route('admin.degree.index') }}"
                     class="nav-link {{ Route::is('admin.degree.index') ? 'active' : '' }}">
                     <i class="nav-icon fas fa-graduation-cap"></i>

@@ -11,6 +11,7 @@ use App\Http\Controllers\SubCateoryController;
 use App\Http\Controllers\InstitutionController;
 use App\Http\Controllers\DegreeController;
 use App\Http\Controllers\ProgramController;
+use App\Http\Controllers\FacultyController;
 use App\Http\Controllers\AlumniController;
 
 use Illuminate\Support\Facades\Route;
@@ -30,6 +31,7 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'verified'])->group(
         Route::resource('institution', InstitutionController::class);
         Route::resource('degree', DegreeController::class);
         Route::resource('program', ProgramController::class);
+        Route::resource('faculty', FacultyController::class);
         Route::resource('alumni', AlumniController::class);
         Route::get('alumni/import/form', [AlumniController::class, 'importForm'])->name('alumni.importForm');
         Route::post('alumni/import', [AlumniController::class, 'import'])->name('alumni.import');

@@ -14,6 +14,7 @@
                         <th>#</th>
                         <th>Institution</th>
                         <th>Degree</th>
+                        <th>Faculty</th>
                         <th>Program Name</th>
                         <th>Status</th>
                         <th>Action</th>
@@ -25,6 +26,7 @@
                             <td>{{ $key + 1 }}</td>
                             <td>{{ $program->institution->institution_name }}</td>
                             <td>{{ $program->degree->degree_name }}</td>
+                           <td>{{ $program->faculty->faculty_name ?? 'N/A' }}</td>
                             <td>{{ $program->program_name }}</td>
                             <td><span class="badge badge-{{ $program->status == 'on' ? 'success' : 'secondary' }}">{{ $program->status }}</span></td>
                             <td>

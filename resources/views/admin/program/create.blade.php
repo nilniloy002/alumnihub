@@ -38,6 +38,23 @@
                                     </div>
                                 </div>
 
+                                <!-- resources/views/admin/program/create.blade.php -->
+
+                                <!-- After Degree Field -->
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="faculty_id">Faculty</label>
+                                        <select name="faculty_id" id="faculty_id" class="form-control" required>
+                                            <option value="" disabled selected>Select Faculty</option>
+                                            @foreach($faculties as $faculty)
+                                                <option value="{{ $faculty->id }}" {{ old('faculty_id') == $faculty->id ? 'selected' : '' }}>
+                                                    {{ $faculty->faculty_name }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                        <x-error>faculty_id</x-error>
+                                    </div>
+                                </div>
                                 {{-- Program Name --}}
                                 <div class="col-lg-6">
                                     <div class="form-group">

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Program;
 use App\Models\Institution;
 use App\Models\Degree;
+use App\Models\Faculty;
 use Illuminate\Http\Request;
 
 class ProgramController extends Controller
@@ -17,18 +18,22 @@ class ProgramController extends Controller
     }
 
     public function create()
-    {
-        $institutions = Institution::where('status', 'on')->get();
-        $degrees = Degree::where('status', 'on')->get();
-        return view('admin.program.create', compact('institutions', 'degrees'));
+   {
+    $institutions = Institution::where('status', 'on')->get();
+    $degrees = Degree::where('status', 'on')->get();
+    $faculties = Faculty::where('status', 'on')->get(); // Add this line
+    
+    return view('admin.program.create', compact('institutions', 'degrees', 'faculties'));
     }
 
     public function store(Request $request)
     {
+        // In store() and update() methods
         $request->validate([
-            'institution_id' => 'required',
-            'degree_id' => 'required',
-            'program_name' => 'required',
+            'institution_id' => 'required|exists:institutions,id',
+            'degree_id' => 'required|exists:degrees,id',
+            'faculty_id' => 'required|exists:faculties,id', // Add this line
+            'program_name' => 'required|string|max:255',
             'status' => 'required|in:on,off',
         ]);
 
@@ -39,17 +44,14 @@ class ProgramController extends Controller
 
     public function edit($id)
     {
-        // Fetch the program into $program
         $program = Program::findOrFail($id);
-
-        // Load institutions and (optionally) all degrees for initial population
         $institutions = Institution::where('status','on')->get();
-        $degrees       = Degree::where('institution_id', $program->institution_id)
-                               ->where('status','on')
-                               ->get();
-
-        // Pass them to the view under the names your Blade expects
-        return view('admin.program.edit', compact('program','institutions','degrees'));
+        $degrees = Degree::where('institution_id', $program->institution_id)
+                        ->where('status','on')
+                        ->get();
+        $faculties = Faculty::where('status', 'on')->get(); // Add this line
+        
+        return view('admin.program.edit', compact('program', 'institutions', 'degrees', 'faculties'));
     }
 
     public function update(Request $request, $id)
@@ -57,15 +59,18 @@ class ProgramController extends Controller
         // Similarly, fetch into $program
         $program = Program::findOrFail($id);
 
+        
+       // In store() and update() methods
         $request->validate([
             'institution_id' => 'required|exists:institutions,id',
-            'degree_id'      => 'required|exists:degrees,id',
-            'program_name'   => 'required|string',
-            'status'         => 'required|in:on,off',
+            'degree_id' => 'required|exists:degrees,id',
+            'faculty_id' => 'required|exists:faculties,id', // Add this line
+            'program_name' => 'required|string|max:255',
+            'status' => 'required|in:on,off',
         ]);
 
         $program->update($request->only([
-            'institution_id','degree_id','program_name','status'
+            'institution_id','degree_id','faculty_id','program_name','status'
         ]));
 
         return redirect()->route('admin.program.index')
