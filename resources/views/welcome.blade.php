@@ -240,7 +240,7 @@
             <div class="flex flex-col lg:flex-row gap-8 mb-12">
                <!-- Hospital Image -->
                <div class="lg:w-1/2">
-                  <img src="{{ asset('images/institute/hospital.jpg') }}" 
+                  <img src="{{ asset('images/institute/Hospital.jpg') }}" 
                      alt="Hamdard General Hospital" 
                      class="w-full h-auto rounded-lg shadow-xl">
                </div>
