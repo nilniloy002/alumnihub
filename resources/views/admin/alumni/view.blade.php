@@ -83,6 +83,21 @@
                                         <th>Gender</th>
                                         <td>{{ $Alumni->gender }}</td>
                                     </tr>
+
+                                     <tr>
+                                        <th>Special Training/Course/Certification</th>
+                                        <td>{{ $Alumni->special_training ?? 'N/A' }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Social Media (LinkedIn)</th>
+                                        <td>
+                                            @if($Alumni->social_link)
+                                                <a href="{{ $Alumni->social_link }}" target="_blank">{{ $Alumni->social_link }}</a>
+                                            @else
+                                                N/A
+                                            @endif
+                                        </td>
+                                    </tr>
                                     <tr>
                                         <th>Status</th>
                                         <td>

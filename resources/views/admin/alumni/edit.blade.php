@@ -234,6 +234,26 @@
                                     </div>
                                 </div>
 
+<!-- Special Training -->
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <label for="special_training">Special Training/Course/Certification</label>
+                                        <textarea name="special_training" id="special_training" class="form-control" rows="3">{{ old('special_training', $Alumni->special_training) }}</textarea>
+                                        <x-error>special_training</x-error>
+                                    </div>
+                                </div>
+
+                                <!-- Social Link -->
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <label for="social_link">Social Media (LinkedIn)</label>
+                                        <input type="url" name="social_link" id="social_link" class="form-control" 
+                                               value="{{ old('social_link', $Alumni->social_link) }}" 
+                                               placeholder="https://example.com">
+                                        <x-error>social_link</x-error>
+                                    </div>
+                                </div>
+
                                 <!-- Status -->
                                 <div class="col-lg-6">
                                     <div class="form-group">

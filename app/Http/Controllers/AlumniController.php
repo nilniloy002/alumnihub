@@ -55,6 +55,8 @@ class AlumniController extends Controller
             'current_occupation_address' => 'required|string|max:500',
             'permanent_address' => 'required|string|max:500',
             'student_photo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'special_training' => 'nullable|string',
+            'social_link' => 'nullable|url',
             'status' => 'required|in:on,off'
         ]);
     
@@ -103,6 +105,8 @@ class AlumniController extends Controller
             'current_occupation_address' => 'required|string|max:500',
             'permanent_address' => 'required|string|max:500',
             'student_photo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'special_training' => 'nullable|string',
+            'social_link' => 'nullable|url',
             'status' => 'required|in:on,off'
         ]);
     
