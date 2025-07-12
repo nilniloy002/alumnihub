@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Teacher;
 use App\Models\Faculty;
 use App\Models\Institution;
+use Illuminate\Support\Facades\Storage;
 
 use Illuminate\Http\Request;
 
