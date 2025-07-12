@@ -19,7 +19,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($data as $institution)
+                    @foreach($institutions as $institution)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
                             <td><img src="{{ asset('/storage/' . $institution->institution_logo) }}" alt="" height="40"></td>
