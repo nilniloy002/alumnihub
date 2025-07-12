@@ -85,6 +85,14 @@
                     </li>
                 </ul>
             </li>
+           
+            <li class="nav-item">
+                <a href="{{ route('admin.teacher.index') }}"
+                    class="nav-link {{ Route::is('admin.teacher.*') ? 'active' : '' }}">
+                    <i class="nav-icon fas fa-chalkboard-teacher"></i>
+                    <p>Teachers</p>
+                </a>
+            </li>
             
             <li class="nav-item">
                 <a href="{{ route('admin.user.index') }}"

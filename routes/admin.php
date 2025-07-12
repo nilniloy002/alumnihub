@@ -13,6 +13,7 @@ use App\Http\Controllers\DegreeController;
 use App\Http\Controllers\ProgramController;
 use App\Http\Controllers\FacultyController;
 use App\Http\Controllers\AlumniController;
+use App\Http\Controllers\TeacherController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -33,6 +34,7 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'verified'])->group(
         Route::resource('program', ProgramController::class);
         Route::resource('faculty', FacultyController::class);
         Route::resource('alumni', AlumniController::class);
+         Route::resource('teacher', TeacherController::class);
         Route::get('alumni/import/form', [AlumniController::class, 'importForm'])->name('alumni.importForm');
         Route::post('alumni/import', [AlumniController::class, 'import'])->name('alumni.import');
         Route::resource('product',ProductController::class);
