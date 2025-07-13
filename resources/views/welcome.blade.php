@@ -147,7 +147,7 @@
                <!-- MD Card -->
                <div class="leader-card bg-white rounded-xl p-6 w-full md:w-80 text-center transform hover:scale-105 transition duration-300">
                   <div class="relative mb-4">
-                     <img src="{{ asset('images/team/md.jpg') }}" alt="Managing Director" 
+                     <img src="{{ asset('images/team/mdsir.jpg') }}" alt="Managing Director" 
                         class="w-32 h-32 mx-auto rounded-full border-4 border-secondary object-cover">
                      <!-- <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-secondary text-white px-4 py-1 rounded-full text-sm font-bold">CEO</div> -->
                   </div>
