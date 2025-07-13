@@ -166,6 +166,7 @@
                   <p class="text-gray-600 text-sm">Senior Director</p>
                    <p class="text-gray-600 text-sm">Marketing & Sales</p>
                   <p class="text-gray-600 text-sm">Planning & Development </p>
+                  <p class="text-gray-600 text-sm">Advisor, Hamdard University Bangladesh </p>
                
                   </br>
                   </br>
@@ -174,7 +175,7 @@
                <!-- Director Card -->
                <div class="leader-card bg-white rounded-xl p-6 w-full md:w-80 text-center transform hover:scale-105 transition duration-300">
                   <div class="relative mb-4">
-                     <img src="{{ asset('images/team/ds.jpg') }}" alt="Director" 
+                     <img src="{{ asset('images/team/dssir.jpg') }}" alt="Director" 
                         class="w-32 h-32 mx-auto rounded-full border-4 border-secondary object-cover">
                   </div>
                   <h3 class="text-sm font-semibold text-primary">Brig Gen (Retd) Engr Mahbub Anowar</h3>
