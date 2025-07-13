@@ -43,7 +43,7 @@
         <div class="absolute inset-0 bg-black opacity-40 z-0">
             <img src="{{ asset('images/institute/RJEMCH.jpg') }}" 
                 alt="College Campus" 
-                class="w-full h-full object-cover">
+                class="w-full h-full object-fill">
         </div>
         <!-- Content Container -->
         <div class="container mx-auto px-4 py-20 md:py-32 text-center relative z-10">
