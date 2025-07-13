@@ -163,8 +163,10 @@
                         class="w-32 h-32 mx-auto rounded-full border-4 border-secondary object-cover">
                   </div>
                   <h3 class="text-sm font-semibold text-primary">Prof. Kamrun Nahar Paulin</h3>
-                  <p class="text-gray-600 text-sm">Senior Director, Planning & Development </p>
-                  <p class="text-gray-600 text-sm">Senior Director, Marketing & Sales (Add. Resp.) </p>
+                  <p class="text-gray-600 text-sm">Senior Director</p>
+                   <p class="text-gray-600 text-sm">Marketing & Sales</p>
+                  <p class="text-gray-600 text-sm">Planning & Development </p>
+               
                   </br>
                   </br>
                   <!-- <p class="text-gray-500 text-sm mt-2">Hamdard University Bangladesh</p> -->
