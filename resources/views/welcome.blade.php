@@ -92,7 +92,7 @@
                <!-- Text Logo/Brand Name - Hidden on mobile, shown on larger screens -->
                <span class="hidden md:block">
                   <h1 class="text-xl font-bold text-white leading-tight">Hamdard Insights</h1>
-                  <p class="text-xs text-green-100">Unified Educational Intelligence</p>
+                  <p class="text-lg text-green-100">Unified Educational Intelligence</p>
                </span>
             </a>
          </div>
