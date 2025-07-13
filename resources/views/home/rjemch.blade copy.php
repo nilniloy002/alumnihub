@@ -4,20 +4,20 @@
     <!-- Navigation -->
     <nav class="bg-green-800 text-white shadow-lg">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <!-- Logo and Branding -->
-            <div class="flex items-center space-x-3">
-                <a href="/" class="flex items-center">
-                    <!-- Logo Image -->
-                    <img src="{{ asset('admin/favicon/logo-01.png') }}" 
-                        alt="HFB Logo" 
-                        class="h-20 w-auto">
-                    <!-- Text Logo/Brand Name -->
-                    <span class="hidden md:block">
-                        <h1 class="text-xl font-bold text-white leading-tight">Hamdard Insights</h1>
-                        <p class="text-xs text-green-100">Unified Educational Intelligence</p>
-                    </span>
-                </a>
-            </div>
+                   <!-- Logo and Branding -->
+         <div class="flex items-center space-x-3">
+            <a href="/" class="flex items-center">
+               <!-- Logo Image -->
+               <img src="{{ asset('admin/favicon/logo-01.png') }}" 
+                  alt="HFB Logo" 
+                  class="h-20 w-auto">  <!-- Adjust height as needed -->
+               <!-- Text Logo/Brand Name - Hidden on mobile, shown on larger screens -->
+               <span class="hidden md:block">
+                  <h1 class="text-xl font-bold text-white leading-tight">Hamdard Insights</h1>
+                  <p class="text-xs text-green-100">Unified Educational Intelligence</p>
+               </span>
+            </a>
+         </div>
             <div class="hidden md:flex space-x-6">
                 <a href="#about" class="hover:text-green-200 transition">About</a>
                 <a href="#academic-journey" class="hover:text-green-200 transition">Journey</a>
@@ -25,7 +25,7 @@
                 <a href="#facilities" class="hover:text-green-200 transition">Facilities</a>
             </div>
             <button class="md:hidden focus:outline-none" id="menu-toggle">
-                <i class="fas fa-bars text-2xl"></i>
+            <i class="fas fa-bars text-2xl"></i>
             </button>
         </div>
         <!-- Mobile Menu -->
@@ -37,76 +37,25 @@
         </div>
     </nav>
 
-    <!-- Hero Slider Section -->
-    <div class="relative overflow-hidden" style="height: 80vh; max-height: 800px;">
-        <!-- Slides Container -->
-        <div class="relative h-full w-full" id="hero-slider">
-            <!-- Slide 1 -->
-            <div class="absolute inset-0 transition-opacity duration-1000 ease-in-out" data-slide>
-                <div class="absolute inset-0 bg-black opacity-40"></div>
-                <img src="{{ asset('images/institute/RJEMCH.jpg') }}" 
-                    alt="College Campus" 
-                    class="w-full h-full object-cover">
-                <div class="container mx-auto px-4 h-full flex items-center justify-center text-center relative z-10">
-                    <div>
-                        <h1 class="text-4xl md:text-6xl font-bold mb-4 text-white">Rawshan Jahan Eastern Medical College</h1>
-                        <p class="text-xl md:text-2xl mb-8 text-white">"A sound mind lies in a sound body"</p>
-                        <a href="#programs" class="bg-white text-green-800 px-6 py-3 rounded-lg font-semibold hover:bg-green-100 transition inline-block">Explore Programs</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Slide 2 -->
-            <div class="absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0" data-slide>
-                <div class="absolute inset-0 bg-black opacity-40"></div>
-                <img src="{{ asset('images/institute/RJEMCHg.jpg') }}" 
-                    alt="College Building" 
-                    class="w-full h-full object-cover">
-                <div class="container mx-auto px-4 h-full flex items-center justify-center text-center relative z-10">
-                    <div>
-                        <h1 class="text-4xl md:text-6xl font-bold mb-4 text-white">Pioneering Unani Medical Education</h1>
-                        <p class="text-xl md:text-2xl mb-8 text-white">First private institution in Bangladesh to offer BUMS program</p>
-                        <a href="#academic-journey" class="bg-white text-green-800 px-6 py-3 rounded-lg font-semibold hover:bg-green-100 transition inline-block">Our Journey</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Slide 3 -->
-            <div class="absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0" data-slide>
-                <div class="absolute inset-0 bg-black opacity-40"></div>
-                <img src="{{ asset('images/institute/RJEMCH.jpg') }}" 
-                    alt="College Laboratory" 
-                    class="w-full h-full object-cover">
-                <div class="container mx-auto px-4 h-full flex items-center justify-center text-center relative z-10">
-                    <div>
-                        <h1 class="text-4xl md:text-6xl font-bold mb-4 text-white">State-of-the-Art Facilities</h1>
-                        <p class="text-xl md:text-2xl mb-8 text-white">Modern laboratories and comprehensive learning resources</p>
-                        <a href="#facilities" class="bg-white text-green-800 px-6 py-3 rounded-lg font-semibold hover:bg-green-100 transition inline-block">View Facilities</a>
-                    </div>
-                </div>
-            </div>
+    <!-- Hero Section with Background Image -->
+    <header class="relative bg-green-700 text-white">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 bg-black opacity-40 z-0">
+            <img src="{{ asset('images/institute/RJEMCH.jpg') }}" 
+                alt="College Campus" 
+                class="w-full h-full object-cover">
         </div>
-
-        <!-- Navigation Arrows -->
-        <button class="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white bg-opacity-30 text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-opacity-50 transition" id="prev-slide">
-            <i class="fas fa-chevron-left"></i>
-        </button>
-        <button class="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white bg-opacity-30 text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-opacity-50 transition" id="next-slide">
-            <i class="fas fa-chevron-right"></i>
-        </button>
-
-        <!-- Dots Navigation -->
-        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex space-x-2">
-            <button class="w-3 h-3 rounded-full bg-white bg-opacity-30 hover:bg-opacity-50 transition slider-dot" data-index="0"></button>
-            <button class="w-3 h-3 rounded-full bg-white bg-opacity-30 hover:bg-opacity-50 transition slider-dot" data-index="1"></button>
-            <button class="w-3 h-3 rounded-full bg-white bg-opacity-30 hover:bg-opacity-50 transition slider-dot" data-index="2"></button>
+        <!-- Content Container -->
+        <div class="container mx-auto px-4 py-20 md:py-32 text-center relative z-10">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">Rawshan Jahan Eastern Medical College</h1>
+            <p class="text-xl md:text-2xl mb-8">"A sound mind lies in a sound body"</p>
+            <a href="#programs" class="bg-white text-green-800 px-6 py-3 rounded-lg font-semibold hover:bg-green-100 transition inline-block">Explore Programs</a>
         </div>
-
         <!-- Gradient Overlay Bottom -->
         <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-gray-50 to-transparent z-10"></div>
-    </div>
+    </header>
 
-       <!-- Founding Vision Section -->
+    <!-- Founding Vision Section -->
     <section id="about" class="py-16 bg-gray-100">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold text-center mb-12 text-green-800">Our Founding Vision</h2>
@@ -559,105 +508,4 @@
             </div>
         </div>
     </section>
-
-    @push('scripts')
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const slides = document.querySelectorAll('[data-slide]');
-            const dots = document.querySelectorAll('.slider-dot');
-            const prevBtn = document.getElementById('prev-slide');
-            const nextBtn = document.getElementById('next-slide');
-            
-            let currentIndex = 0;
-            let slideInterval;
-            
-            // Show specific slide
-            function showSlide(index) {
-                // Wrap around if at ends
-                if (index >= slides.length) currentIndex = 0;
-                if (index < 0) currentIndex = slides.length - 1;
-                
-                // Update slides visibility
-                slides.forEach((slide, i) => {
-                    slide.style.opacity = i === currentIndex ? '1' : '0';
-                });
-                
-                // Update dots
-                dots.forEach(dot => dot.classList.remove('bg-opacity-100'));
-                dots[currentIndex].classList.add('bg-opacity-100');
-            }
-            
-            // Next slide
-            function nextSlide() {
-                currentIndex++;
-                showSlide(currentIndex);
-                resetInterval();
-            }
-            
-            // Previous slide
-            function prevSlide() {
-                currentIndex--;
-                showSlide(currentIndex);
-                resetInterval();
-            }
-            
-            // Go to specific slide
-            function goToSlide(index) {
-                currentIndex = index;
-                showSlide(currentIndex);
-                resetInterval();
-            }
-            
-            // Reset auto-slide interval
-            function resetInterval() {
-                clearInterval(slideInterval);
-                slideInterval = setInterval(nextSlide, 5000);
-            }
-            
-            // Event listeners
-            nextBtn.addEventListener('click', nextSlide);
-            prevBtn.addEventListener('click', prevSlide);
-            
-            dots.forEach(dot => {
-                dot.addEventListener('click', function() {
-                    goToSlide(parseInt(this.getAttribute('data-index')));
-                });
-            });
-            
-            // Auto-slide
-            slideInterval = setInterval(nextSlide, 5000);
-            
-            // Pause on hover
-            const slider = document.getElementById('hero-slider');
-            slider.addEventListener('mouseenter', () => clearInterval(slideInterval));
-            slider.addEventListener('mouseleave', resetInterval);
-            
-            // Initialize
-            showSlide(0);
-            dots[0].classList.add('bg-opacity-100');
-        });
-    </script>
-    @endpush
-
-    @push('styles')
-    <style>
-        .slider-dot.bg-opacity-100 {
-            background-color: rgba(255, 255, 255, 1) !important;
-        }
-        
-        @media (max-width: 768px) {
-            .relative.overflow-hidden {
-                height: 60vh !important;
-            }
-            
-            [data-slide] h1 {
-                font-size: 2rem !important;
-            }
-            
-            [data-slide] p {
-                font-size: 1.2rem !important;
-            }
-        }
-    </style>
-    @endpush
 @endsection
