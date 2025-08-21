@@ -31,6 +31,21 @@ class HomeController extends Controller
         return view('home.hiuam');
     }
 
+   public function AllInstitutions()
+    {
+        return view('home.institutions');
+    }
+  
+    public function Health()
+    {
+        return view('home.health');
+    }
+    
+    public function Philanthropic()
+    {
+        return view('home.philanthropic');
+    }
+
    
     
 }

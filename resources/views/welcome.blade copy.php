@@ -3,12 +3,12 @@
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Hamdard Foundation Bangladesh</title>
+      <title>Hamdard Insights – Educational Information System of Hamdard Bangladesh</title>
       <meta name="description" content="Hamdard Insights is a centralized digital platform showcasing all educational institutions under Hamdard Bangladesh, including departments, courses, students, faculty, staff, and a media gallery.">
       <meta name="keywords" content="Hamdard Bangladesh, Hamdard Education, Hamdard Insights, Educational Management, Academic Portal, Departments, Courses, Students, Teachers, Staff, Institutional Data">
       <meta name="author" content="Hamdard Bangladesh">
       <meta property="og:title" content="Hamdard Insights – Educational Information System">
-      <meta property="og:description" content="Explore all of Hamdard Bangladesh’s educational institutions in one place – from departments and courses to student and faculty details.">
+      <meta property="og:description" content="Explore all of Hamdard Bangladesh's educational institutions in one place – from departments and courses to student and faculty details.">
       <meta property="og:type" content="website">
       <meta property="og:url" content="https://hamdardinsight.com/">
       <meta property="og:image" content="">
@@ -16,6 +16,7 @@
       <script src="https://cdn.tailwindcss.com"></script>
       <link rel="icon" href="{{ asset('admin/favicon/fav.png') }}" type="image/png">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
       <script>
          tailwind.config = {
            theme: {
@@ -25,6 +26,7 @@
                  secondary: '#388e3c',
                  light: '#e8f5e9',
                  dark: '#1b5e20',
+                 accent: '#4caf50',
                }
              }
            }
@@ -135,7 +137,7 @@
                   class="h-20 w-auto">  <!-- Adjust height as needed -->
                <!-- Text Logo/Brand Name - Hidden on mobile, shown on larger screens -->
                <span class="hidden md:block">
-                  <h1 class="text-xl font-bold text-white leading-tight">Hamdard Foundation Bangladesh</h1>
+                  <h1 class="text-xl font-bold text-white leading-tight">Hamdard Insights</h1>
                   <p class="text-lg text-green-100">Unified Educational Intelligence</p>
                </span>
             </a>
@@ -193,12 +195,10 @@
                   <div class="relative mb-4">
                      <img src="{{ asset('images/team/mdsir.jpg') }}" alt="Managing Director" 
                         class="w-32 h-32 mx-auto rounded-full border-4 border-secondary object-cover">
-                     <!-- <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-secondary text-white px-4 py-1 rounded-full text-sm font-bold">CEO</div> -->
                   </div>
                   <h3 class="text-sm font-semibold text-primary">Dr. Hakim Md. Yousuf Harun Bhuiyan</h3>
                   <p class="text-gray-600 text-sm">Chief Mutawalli & Managing Director, Hamdard Laboratories (Waqf) Bangladesh &  </p>
                   <p class="text-gray-600 text-sm">Secretary General, Hamdard Foundation Bangladesh</p>
-                  <!-- <p class="text-gray-500 text-sm mt-2">Hamdard Laboratories (Waqf) Bangladesh</p> -->
                </div>
                <!-- Chief Advisor Card -->
                <div class="leader-card bg-white rounded-xl p-6 w-full md:w-80 text-center transform hover:scale-105 transition duration-300">
@@ -208,12 +208,9 @@
                   </div>
                   <h3 class="text-sm font-semibold text-primary">Prof. Kamrun Nahar Paulin</h3>
                   <p class="text-gray-600 text-sm">Senior Director</p>
-                  <p class="text-gray-600 text-sm">Marketing & Sales</p>
+                   <p class="text-gray-600 text-sm">Marketing & Sales</p>
                   <p class="text-gray-600 text-sm">Planning & Development </p>
                   <p class="text-gray-600 text-sm">Advisor, Hamdard University Bangladesh </p>
-                  </br>
-                  </br>
-                  <!-- <p class="text-gray-500 text-sm mt-2">Hamdard University Bangladesh</p> -->
                </div>
                <!-- Director Card -->
                <div class="leader-card bg-white rounded-xl p-6 w-full md:w-80 text-center transform hover:scale-105 transition duration-300">
@@ -222,17 +219,13 @@
                         class="w-32 h-32 mx-auto rounded-full border-4 border-secondary object-cover">
                   </div>
                   <h3 class="text-sm font-semibold text-primary">Brig Gen (Retd) Engr Mahbub Anowar</h3>
-                  <!-- <p class="text-gray-600 text-xs">SUP, psc, B.Sc & M.Sc Engg, MDS, GOBE, EMBA, FIEB</p> -->
                   <p class="text-gray-600 text-sm">SUP, PSC</p>
-                  <!-- <p class="text-gray-600 text-sm">Director</p> -->
                   <p class="text-gray-600 text-sm">Director, Hamdard Foundation Bangladesh</p>
-                  </br>
-                  </br>
-                  <!-- <p class="text-gray-500 text-sm mt-2">Hamdard Foundation Bangladesh</p> -->
                </div>
             </div>
          </div>
       </section>
+
       <!-- Hamdard Foundation Section -->
       <section class="relative py-16 bg-primary text-white overflow-hidden">
          <div class="wave-shape">
@@ -245,6 +238,7 @@
                <h2 class="text-4xl font-bold mb-4">Hamdard Foundation Bangladesh</h2>
                <p class="text-xl text-green-100 max-w-4xl mx-auto">A beacon of hope and service since 1989, dedicated to education, healthcare, and humanitarian services</p>
             </div>
+            
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
                <!-- Education Card -->
                <div class="foundation-card h-96">
@@ -262,10 +256,11 @@
                      <div class="foundation-back bg-gradient-to-br from-primary to-dark rounded-xl p-8 flex flex-col items-center justify-center">
                         <h3 class="text-2xl font-bold mb-4 text-white">Our Educational Vision</h3>
                         <p class="text-center text-green-100">Establishing premier institutions that nurture talent, promote research, and create responsible global citizens through holistic education.</p>
-                        <a href="{{ url('institutions') }}" class="mt-6 px-6 py-2 bg-white text-primary rounded-full font-medium hover:bg-green-100 transition duration-300">Explore Institutions</a>
+                        <a href="#" class="mt-6 px-6 py-2 bg-white text-primary rounded-full font-medium hover:bg-green-100 transition duration-300">Explore Institutions</a>
                      </div>
                   </div>
                </div>
+               
                <!-- Health & Medicare Card -->
                <div class="foundation-card h-96">
                   <div class="foundation-inner h-full rounded-xl shadow-xl">
@@ -282,10 +277,11 @@
                      <div class="foundation-back bg-gradient-to-br from-primary to-dark rounded-xl p-8 flex flex-col items-center justify-center">
                         <h3 class="text-2xl font-bold mb-4 text-white">Our Healthcare Mission</h3>
                         <p class="text-center text-green-100">Providing accessible, affordable, and quality healthcare through hospitals, medical colleges, and community health programs.</p>
-                        <a href="{{ url('health') }}" class="mt-6 px-6 py-2 bg-white text-primary rounded-full font-medium hover:bg-green-100 transition duration-300">View Services</a>
+                        <a href="#" class="mt-6 px-6 py-2 bg-white text-primary rounded-full font-medium hover:bg-green-100 transition duration-300">View Services</a>
                      </div>
                   </div>
                </div>
+               
                <!-- Philanthropic Card -->
                <div class="foundation-card h-96">
                   <div class="foundation-inner h-full rounded-xl shadow-xl">
@@ -302,11 +298,12 @@
                      <div class="foundation-back bg-gradient-to-br from-primary to-dark rounded-xl p-8 flex flex-col items-center justify-center">
                         <h3 class="text-2xl font-bold mb-4 text-white">Our Humanitarian Work</h3>
                         <p class="text-center text-green-100">Extending support to the underprivileged through disaster relief, scholarships, and community development initiatives.</p>
-                        <a href="{{ url('philanthropic') }}" class="mt-6 px-6 py-2 bg-white text-primary rounded-full font-medium hover:bg-green-100 transition duration-300">Learn More</a>
+                        <a href="#" class="mt-6 px-6 py-2 bg-white text-primary rounded-full font-medium hover:bg-green-100 transition duration-300">Learn More</a>
                      </div>
                   </div>
                </div>
             </div>
+            
             <!-- About Foundation -->
             <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-8 mb-12">
                <h3 class="text-2xl font-bold mb-6 text-center">About Hamdard Foundation</h3>
@@ -321,6 +318,7 @@
                   </div>
                </div>
             </div>
+            
             <!-- Goals and Objectives -->
             <div class="bg-white rounded-xl shadow-lg p-8">
                <h3 class="text-2xl font-bold mb-6 text-center text-dark">Our Goals and Objectives</h3>
@@ -329,48 +327,91 @@
                      <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mb-4 mx-auto">
                         <i class="fas fa-leaf text-white"></i>
                      </div>
-                     <h4 class="text-xl font-bold text-center mb-4 text-dark">Preserve Eastern Medicine</h4>
+                     <h4 class="font-bold text-center mb-2">Preserve Eastern Medicine</h4>
                      <p class="text-sm text-center text-gray-700">Develop and implement the interests of Eastern System of Medicine (Unani, Ayurvedic, and Herbal)</p>
                   </div>
+                  
                   <div class="bg-green-50 rounded-lg p-6 hover:bg-green-100 transition duration-300">
                      <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mb-4 mx-auto">
                         <i class="fas fa-university text-white"></i>
                      </div>
-                     <h4 class="text-xl font-bold text-center mb-4 text-dark">Promote Education</h4>
+                     <h4 class="font-bold text-center mb-2">Promote Education</h4>
                      <p class="text-sm text-center text-gray-700">Establish educational institutions to promote science, education, health, and culture</p>
                   </div>
+                  
                   <div class="bg-green-50 rounded-lg p-6 hover:bg-green-100 transition duration-300">
                      <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mb-4 mx-auto">
                         <i class="fas fa-heart text-white"></i>
                      </div>
-                     <h4 class="text-xl font-bold text-center mb-4 text-dark">Healthcare Services</h4>
+                     <h4 class="font-bold text-center mb-2">Healthcare Services</h4>
                      <p class="text-sm text-center text-gray-700">Provide health and medical service through free prescriptions and medicine distribution</p>
                   </div>
+                  
                   <div class="bg-green-50 rounded-lg p-6 hover:bg-green-100 transition duration-300">
                      <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mb-4 mx-auto">
                         <i class="fas fa-flask text-white"></i>
                      </div>
-                     <h4 class="text-xl font-bold text-center mb-4 text-dark">Medical Research</h4>
+                     <h4 class="font-bold text-center mb-2">Medical Research</h4>
                      <p class="text-sm text-center text-gray-700">Conduct research on therapeutics and drugs of holistic medicine</p>
                   </div>
+                  
                   <div class="bg-green-50 rounded-lg p-6 hover:bg-green-100 transition duration-300">
                      <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mb-4 mx-auto">
                         <i class="fas fa-hand-holding-heart text-white"></i>
                      </div>
-                     <h4 class="text-xl font-bold text-center mb-4 text-dark">Disaster Relief</h4>
+                     <h4 class="font-bold text-center mb-2">Disaster Relief</h4>
                      <p class="text-sm text-center text-gray-700">Help and assist distressed people during natural disasters</p>
                   </div>
+                  
                   <div class="bg-green-50 rounded-lg p-6 hover:bg-green-100 transition duration-300">
                      <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mb-4 mx-auto">
                         <i class="fas fa-book text-white"></i>
                      </div>
-                     <h4 class="text-xl font-bold text-center mb-4 text-dark">Health Awareness</h4>
+                     <h4 class="font-bold text-center mb-2">Health Awareness</h4>
                      <p class="text-sm text-center text-gray-700">Create health awareness through literature, books, and journals</p>
                   </div>
                </div>
             </div>
          </div>
       </section>
+
+      <!-- Institution Logos -->
+      <section class="py-12 bg-green-50">
+         <h2 class="text-center text-2xl font-bold text-dark mb-8">Our Institutions</h2>
+         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 px-6">
+            <!-- Hamdard University Bangladesh -->
+            <a href="{{ url('hub') }}" class="bg-white shadow-md p-4 rounded-lg text-center hover:shadow-xl transition duration-300 block">
+               <img src="{{ asset('images/institute/4.png') }}" alt="HUB" class="w-24 h-24 mx-auto mb-2">
+               <p class="text-sm font-medium text-gray-700">Hamdard University Bangladesh</p>
+            </a>
+            <!-- Hamdard Institute of Unani & Ayurvedic Medicine -->
+            <a href="{{ url('hiuam') }}" class="bg-white shadow-md p-4 rounded-lg text-center hover:shadow-xl transition duration-300 block">
+               <img src="{{ asset('images/institute/8.png') }}" alt="Hamdard Institute of Unani & Ayurvedic Medicine" class="w-24 h-24 mx-auto mb-2">
+               <p class="text-sm font-medium text-gray-700">Hamdard Institute of Unani & Ayurvedic Medicine</p>
+            </a>
+            <!-- Rawshan Jahan Eastern Medical College & Hospital -->
+            <a href="{{ url('rjemch') }}" class="bg-white shadow-md p-4 rounded-lg text-center hover:shadow-xl transition duration-300 block">
+               <img src="{{ asset('images/institute/7.png') }}" alt="Rawshan Jahan Eastern Medical College & Hospital" class="w-24 h-24 mx-auto mb-2">
+               <p class="text-sm font-medium text-gray-700">Rawshan Jahan Eastern Medical College & Hospital</p>
+            </a>
+            <!-- Hamdard Unani Medical College & Hospital -->
+            <a href="{{ url('humch') }}" class="bg-white shadow-md p-4 rounded-lg text-center hover:shadow-xl transition duration-300 block">
+               <img src="{{ asset('images/institute/6.png') }}" alt="Hamdard Unani Medical College & Hospital" class="w-24 h-24 mx-auto mb-2">
+               <p class="text-sm font-medium text-gray-700">Hamdard Unani Medical College & Hospital</p>
+            </a>
+            <!-- Hakim Said Eastern Medical College & Hospital -->
+            <a href="{{ url('hsemch') }}" class="bg-white shadow-md p-4 rounded-lg text-center hover:shadow-xl transition duration-300 block">
+               <img src="{{ asset('images/institute/5.png') }}" alt="Hakim Said Eastern Medical College & Hospital" class="w-24 h-24 mx-auto mb-2">
+               <p class="text-sm font-medium text-gray-700">Hakim Said Eastern Medical College & Hospital</p>
+            </a>
+            <!-- Hamdard Public College -->
+            <a href="{{ url('hpc') }}" class="bg-white shadow-md p-4 rounded-lg text-center hover:shadow-xl transition duration-300 block">
+               <img src="{{ asset('images/institute/9.png') }}" alt="Hamdard Public College" class="w-24 h-24 mx-auto mb-2">
+               <p class="text-sm font-medium text-gray-700">Hamdard Public College</p>
+            </a>
+         </div>
+      </section>
+      
       <!-- Campus Memories Masonry Gallery -->
       <section class="py-12 bg-white px-6">
          <div class="container mx-auto">
@@ -510,6 +551,19 @@
                duration: 0.8,
                delay: index * 0.2,
                ease: 'back.out(1.7)'
+             });
+           });
+           
+           // Animate foundation cards on scroll
+           const foundationCards = document.querySelectorAll('.foundation-card');
+           
+           foundationCards.forEach((card, index) => {
+             gsap.from(card, {
+               x: index % 2 === 0 ? -50 : 50,
+               opacity: 0,
+               duration: 0.8,
+               delay: index * 0.3,
+               ease: 'power2.out'
              });
            });
            

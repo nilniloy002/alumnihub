@@ -67,6 +67,9 @@ Route::get('/hsemch', [HomeController::class, 'Hsemch']);
 Route::get('/hpc', [HomeController::class, 'Hpc']);
 Route::get('/hub', [HomeController::class, 'Hub']);
 Route::get('/hiuam', [HomeController::class, 'Hiuam']);
+Route::get('/institutions', [HomeController::class, 'AllInstitutions']);
+Route::get('/health', [HomeController::class, 'Health']);
+Route::get('/philanthropic', [HomeController::class, 'Philanthropic']);
 
 // Auth routes
 require __DIR__.'/auth.php';
