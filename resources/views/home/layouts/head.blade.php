@@ -1,7 +1,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'Rawshan Jahan Eastern Medical College & Hospital')</title>
+    <!-- make it dynamic with page title -->
+    <title>@yield('title', 'Hamdard Foundation Bangladesh')</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>

@@ -45,6 +45,10 @@ class HomeController extends Controller
     {
         return view('home.philanthropic');
     }
+    public function AboutHfb()
+    {
+        return view('home.about-hfb');
+    }
 
    
     

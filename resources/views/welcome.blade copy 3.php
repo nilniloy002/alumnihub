@@ -1,10 +1,403 @@
 <!DOCTYPE html>
 <html lang="en">
-    @include('partials.head')
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamdard Foundation Bangladesh</title>
+    <meta name="description" content="Hamdard Insights is a centralized digital platform showcasing all educational institutions under Hamdard Bangladesh, including departments, courses, students, faculty, staff, and a media gallery.">
+    <meta name="keywords" content="Hamdard Bangladesh, Hamdard Education, Hamdard Insights, Educational Management, Academic Portal, Departments, Courses, Students, Teachers, Staff, Institutional Data">
+    <meta name="author" content="Hamdard Bangladesh">
+    <meta property="og:title" content="Hamdard Insights – Educational Information System">
+    <meta property="og:description" content="Explore all of Hamdard Bangladesh's educational institutions in one place – from departments and courses to student and faculty details.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hamdardinsight.com/">
+    <meta property="og:image" content="">
+    <meta name="robots" content="index, follow">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="{{ asset('admin/favicon/fav.png') }}" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                primary: '#2e7d32',
+                secondary: '#388e3c',
+                light: '#e8f5e9',
+                dark: '#1b5e20',
+              }
+            }
+          }
+        }
+    </script>
+    <style>
+        .masonry-grid {
+        column-count: 3;
+        column-gap: 1rem;
+        }
+        .masonry-item {
+        break-inside: avoid;
+        margin-bottom: 1rem;
+        transition: all 0.3s ease;
+        }
+        .masonry-item:hover {
+        transform: scale(1.02);
+        }
+        @media (max-width: 768px) {
+        .masonry-grid {
+        column-count: 2;
+        }
+        }
+        @media (max-width: 480px) {
+        .masonry-grid {
+        column-count: 1;
+        }
+        }
+        .leader-card {
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .leader-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        .floating-cap {
+        animation: float 3s ease-in-out infinite;
+        }
+        .floating-diploma {
+        animation: float 4s ease-in-out infinite 1s;
+        }
+        @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-15px); }
+        }
+        .confetti {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        opacity: 0;
+        }
+        .foundation-card {
+        perspective: 1000px;
+        }
+        .foundation-inner {
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+        position: relative;
+        }
+        .foundation-card:hover .foundation-inner {
+        transform: rotateY(180deg);
+        }
+        .foundation-front, .foundation-back {
+        backface-visibility: hidden;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        }
+        .foundation-back {
+        transform: rotateY(180deg);
+        }
+        .wave-shape {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+        transform: rotate(180deg);
+        }
+        .wave-shape svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.3px);
+        height: 150px;
+        }
+        .wave-shape .shape-fill {
+        fill: #e8f5e9;
+        }
+        .parallax-bg {
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        }
+        
+        /* Navigation Styles */
+        .nav-container {
+            position: relative;
+        }
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .nav-item {
+            position: relative;
+        }
+        .nav-link {
+            color: white;
+            font-weight: 400;
+            padding: 2px ;
+            border-radius: 0.375rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 14px;
+        }
+        .nav-link:hover {
+            /* background-color: rgba(255, 255, 255, 0.1); */
+        }
+        .nav-link.active {
+            /* background-color: rgba(255, 255, 255, 0.2); */
+        }
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: white;
+            min-width: 220px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            border-radius: 0.5rem;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 50;
+            font-size:12px;
 
+        }
+        .dropdown-menu.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .dropdown-item {
+            color: #1f2937;
+            padding: 0.75rem 1rem;
+            display: block;
+            transition: all 0.2s ease;
+            border-bottom: 1px solid #f3f4f6;
+        }
+        .dropdown-item:last-child {
+            border-bottom: none;
+        }
+        .dropdown-item:hover {
+            background-color: #f9fafb;
+            color: #2e7d32;
+        }
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 1024px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                height: 100vh;
+                width: 80%;
+                max-width: 300px;
+                background-color: #2e7d32;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 2rem;
+                transition: right 0.3s ease;
+                z-index: 100;
+                overflow-y: auto;
+            }
+            .nav-menu.active {
+                right: 0;
+            }
+            .nav-item {
+                width: 100%;
+            }
+            .nav-link {
+                padding: 1rem 0;
+                width: 100%;
+                justify-content: flex-start;
+            }
+            .dropdown-menu {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                box-shadow: none;
+                background-color: rgba(255, 255, 255, 0.1);
+                margin-top: 0.5rem;
+                margin-left: 1rem;
+                width: calc(100% - 2rem);
+            }
+            .dropdown-item {
+                color: white;
+                border-bottom-color: rgba(255, 255, 255, 0.1);
+            }
+            .dropdown-item:hover {
+                background-color: rgba(255, 255, 255, 0.1);
+                color: white;
+            }
+            .overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+                z-index: 99;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+            }
+            .overlay.active {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    </style>
+</head>
 <body class="bg-gradient-to-br from-green-50 to-green-100 font-sans">
     <!-- Header -->
-    @include('partials.header')
+ <!-- Header -->
+    <header class="flex items-center justify-between px-6 py-3 bg-primary shadow-lg sticky top-0 z-50">
+        <!-- Logo and Branding -->
+        <div class="flex items-center space-x-3">
+            <a href="/" class="flex items-center">
+                <!-- Logo Image -->
+                <img src="{{ asset('admin/favicon/logo-01.png') }}" 
+                    alt="HFB Logo" 
+                    class="h-20 w-auto">
+                <!-- Text Logo/Brand Name - Hidden on mobile, shown on larger screens -->
+                <span class="hidden md:block">
+                    <h1 class="text-base font-bold text-white leading-tight">Hamdard Foundation Bangladesh</h1>
+                    <!-- <p class="text-sm text-green-100">Unified Educational Intelligence</p> -->
+                </span>
+            </a>
+        </div>
+        
+        <!-- Navigation -->
+        <div class="nav-container">
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" id="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <!-- Navigation Menu -->
+            <nav class="nav-menu" id="nav-menu">
+                <!-- Close Button for Mobile -->
+                <button class="mobile-menu-btn self-end md:hidden" id="mobile-menu-close">
+                    <i class="fas fa-times"></i>
+                </button>
+                
+                <!-- Navigation Items -->
+                <div class="nav-item">
+                    <a href="{{ url('/') }}" class="nav-link active">
+                        <!-- <i class="fas fa-home"></i> -->
+                        <span>Home</span>
+                    </a>
+                </div>
+                
+                <div class="nav-item">
+                    <a href="{{ url('about-hamdard-foundation') }}" class="nav-link">
+                        <!-- <i class="fas fa-info-circle"></i> -->
+                        <span>About Hamdard Foundation</span>
+                    </a>
+                </div>
+                
+                <div class="nav-item">
+                    <a href="{{ url('institutions') }}" class="nav-link dropdown-toggle">
+                        <!-- <i class="fas fa-university"></i> -->
+                        <span>Institutions</span>
+                        <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="{{ url('hub') }}" class="dropdown-item">
+                            <!-- <i class="fas fa-graduation-cap mr-2"></i> -->
+                            Hamdard University Bangladesh
+                        </a>
+                        <a href="{{ url('hiuam') }}" class="dropdown-item">
+                            <!-- <i class="fas fa-school mr-2"></i> -->
+                           Hamdard Institute of Unani & Ayurvedic Medicine
+                        </a>
+                        <a href="{{ url('rjemch') }}" class="dropdown-item">
+                            <!-- <i class="fas fa-school mr-2"></i> -->
+                            Rawshan Jahan Eastern Medical College & Hospital
+                        </a>
+                        <a href="{{ url('humch') }}" class="dropdown-item">
+                            <!-- <i class="fas fa-school mr-2"></i> -->
+                           Hamdard Unani Medical College & Hospital
+                        </a>
+                        <a href="{{ url('hsemch') }}" class="dropdown-item">
+                            <!-- <i class="fas fa-school mr-2"></i> -->
+                            Hakim Said Eastern Medical College & Hospital
+                        </a>
+                        <a href="{{ url('hpc') }}" class="dropdown-item">
+                            <!-- <i class="fas fa-school mr-2"></i> -->
+                            Hamdard Public College
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="nav-item">
+                    <a href="{{ url('health') }}" class="nav-link">
+                        <!-- <i class="fas fa-heartbeat"></i> -->
+                        <span>Healthcare</span>
+                    </a>
+                </div>
+                
+                <div class="nav-item">
+                    <a href="{{ url('philanthropic') }}" class="nav-link">
+                        <!-- <i class="fas fa-hands-helping"></i> -->
+                        <span>Philanthropic Activities</span>
+                    </a>
+                </div>
+            
+                
+                <!-- Existing buttons -->
+                <div class="flex flex-col gap-2 mt-4 md:hidden">
+                    <!-- <a href="#" 
+                       class="text-white hover:text-green-200 font-medium px-3 py-2 rounded-md transition-colors duration-300
+                       {{ request()->is('register') ? 'bg-green-700' : '' }} text-center">
+                    <i class="fas fa-user-plus mr-1"></i>
+                    <span>Alumni Registration</span>
+                    </a> -->
+                    <a href="{{ route('login') }}" 
+                       class="bg-secondary hover:bg-green-700 text-white font-medium px-4 py-2 rounded-md transition-colors duration-300
+                       flex items-center justify-center">
+                    <i class="fas fa-sign-in-alt mr-2"></i>
+                    <span>Login Portal</span>
+                    </a>
+                </div>
+            </nav>
+            
+            <!-- Overlay for mobile menu -->
+            <div class="overlay" id="overlay"></div>
+        </div>
+        
+        <!-- Desktop buttons -->
+        <nav class="hidden md:flex items-center space-x-4">
+            <!-- <a href="#" 
+               class="text-white hover:text-green-200 font-medium px-3 py-2 rounded-md transition-colors duration-300
+               {{ request()->is('register') ? 'bg-green-700' : '' }}">
+            <i class="fas fa-user-plus mr-1"></i>
+            <span class="hidden sm:inline">Alumni Registration</span>
+            </a> -->
+            <a href="{{ route('login') }}" 
+               class="bg-secondary hover:bg-green-700 text-white font-medium px-4 py-2 rounded-md transition-colors duration-300
+               flex items-center">
+            <i class="fas fa-sign-in-alt mr-2"></i>
+            <span class="hidden sm:inline">Login Portal</span>
+            <span class="sm:hidden">Login</span>
+            </a>
+        </nav>
+    </header>
 
     <!-- Interactive Hero Section -->
     <section class="relative bg-white py-16 overflow-hidden">
@@ -389,114 +782,6 @@
         </div>
     </section>
 
-    <!-- Leadership Messages Section -->
-<section id="leadership-messages" class="py-16 bg-gradient-to-br from-green-50 to-white">
-    <div class="container mx-auto px-6">
-        <div class="text-center mb-12">
-            <h2 class="text-4xl font-bold text-dark mb-4">Leadership Messages</h2>
-            <p class="text-xl text-gray-600 max-w-2xl mx-auto">Hear directly from our esteemed leaders about the vision and mission of Hamdard Foundation Bangladesh</p>
-        </div>
-        
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <!-- Message from Managing Director -->
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
-                <div class="relative">
-                    <div class="h-2 bg-gradient-to-r from-primary to-secondary"></div>
-                    <div class="p-6">
-                        <div class="flex items-center mb-4">
-                            <img src="{{ asset('images/team/mdsir.jpg') }}" alt="Managing Director" 
-                                class="w-16 h-16 rounded-full border-4 border-secondary object-cover mr-4">
-                            <div>
-                                <h3 class="text-lg font-bold text-primary">Dr. Hakim Md. Yousuf Harun Bhuiyan</h3>
-                                <p class="text-sm text-gray-600">Chief Mutawalli & Managing Director</p>
-                            </div>
-                        </div>
-                        <div class="relative">
-                            <i class="fas fa-quote-left text-primary opacity-20 text-4xl absolute -top-2 -left-2"></i>
-                            <p class="text-gray-700 mb-4 relative z-10">
-                                Hamdard Foundation Bangladesh stands as a testament to our commitment to serving humanity through education, healthcare, and philanthropy. Established in 1989, we have consistently worked towards creating a society where every individual has access to quality education and healthcare.
-                            </p>
-                            <p class="text-gray-700 mb-4">
-                                Our journey began with a vision to address the fundamental challenges facing our nation - illiteracy, poverty, and lack of healthcare facilities. Today, I am proud to see how this vision has materialized into institutions that are transforming lives and communities.
-                            </p>
-                            <p class="text-gray-700">
-                                As we move forward, our focus remains on expanding our reach and impact, ensuring that the light of knowledge and healing reaches every corner of Bangladesh. Together, we are building a brighter, healthier future for generations to come.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Message from Senior Director -->
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
-                <div class="relative">
-                    <div class="h-2 bg-gradient-to-r from-secondary to-primary"></div>
-                    <div class="p-6">
-                        <div class="flex items-center mb-4">
-                            <img src="{{ asset('images/team/sd.jpg') }}" alt="Senior Director" 
-                                class="w-16 h-16 rounded-full border-4 border-secondary object-cover mr-4">
-                            <div>
-                                <h3 class="text-lg font-bold text-primary">Prof. Kamrun Nahar Paulin</h3>
-                                <p class="text-sm text-gray-600">Senior Director & Advisor</p>
-                            </div>
-                        </div>
-                        <div class="relative">
-                            <i class="fas fa-quote-left text-primary opacity-20 text-4xl absolute -top-2 -left-2"></i>
-                            <p class="text-gray-700 mb-4 relative z-10">
-                                Education is the most powerful weapon we can use to change the world. At Hamdard Foundation, we believe in nurturing minds and building characters that will lead our nation towards prosperity and progress.
-                            </p>
-                            <p class="text-gray-700 mb-4">
-                                Our educational institutions are designed not just to impart knowledge but to foster critical thinking, innovation, and ethical values. We are committed to creating an environment where students can explore their potential and develop into responsible global citizens.
-                            </p>
-                            <p class="text-gray-700">
-                                As we continue to expand our educational footprint, our focus remains on quality, accessibility, and relevance. We are dedicated to preparing our youth for the challenges of tomorrow while preserving our rich cultural heritage and values.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Message from Director -->
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
-                <div class="relative">
-                    <div class="h-2 bg-gradient-to-r from-primary to-dark"></div>
-                    <div class="p-6">
-                        <div class="flex items-center mb-4">
-                            <img src="{{ asset('images/team/dssir.jpg') }}" alt="Director" 
-                                class="w-16 h-16 rounded-full border-4 border-secondary object-cover mr-4">
-                            <div>
-                                <h3 class="text-lg font-bold text-primary">Brig Gen (Retd) Engr Mahbub Anowar</h3>
-                                <p class="text-sm text-gray-600">Director, Hamdard Foundation Bangladesh</p>
-                            </div>
-                        </div>
-                        <div class="relative">
-                            <i class="fas fa-quote-left text-primary opacity-20 text-4xl absolute -top-2 -left-2"></i>
-                            <p class="text-gray-700 mb-4 relative z-10">
-                                Service to humanity is the highest form of worship. At Hamdard Foundation Bangladesh, we are driven by this principle in all our endeavors - from education and healthcare to our philanthropic activities.
-                            </p>
-                            <p class="text-gray-700 mb-4">
-                                Our commitment extends beyond institutional boundaries to touch the lives of the most vulnerable in our society. Through disaster relief, scholarships, and community development programs, we strive to create a more equitable and compassionate society.
-                            </p>
-                            <p class="text-gray-700">
-                                As Director, I am dedicated to ensuring that our operations maintain the highest standards of integrity and efficiency. We will continue to expand our services while upholding the values that have been the foundation of our success for over three decades.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Call to Action -->
-        <div class="text-center mt-12">
-            <a href="{{ url('about-hamdard-foundation') }}" 
-               class="inline-flex items-center bg-primary hover:bg-dark text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition duration-300">
-                <span>Learn More About Our Foundation</span>
-                <i class="fas fa-arrow-right ml-2"></i>
-            </a>
-        </div>
-    </div>
-</section>
-
     <!-- Campus Memories Masonry Gallery -->
     <section class="py-12 bg-white px-6">
         <div class="container mx-auto">
@@ -562,6 +847,210 @@
         </div>
     </section>
     <!-- Footer -->
-       @include('partials.footer')
+<!-- Footer -->
+    <footer class="bg-dark text-white py-6 px-6">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0">
+                <h3 class="text-xl font-bold text-green-300 mb-2">Hamdard Insights</h3>
+                <p class="text-green-100">Hamdard Insights is a unified platform for managing all educational data of Hamdard Bangladesh institutions.</p>
+            </div>
+            <div class="space-y-2">
+                <p class="text-green-100"><i class="fas fa-envelope mr-2"></i> hamdardinsights@gmail.com</p>
+                <p class="text-green-100"><i class="fas fa-phone mr-2"></i> +1 (555) 123-4567</p>
+                <div class="flex space-x-4 mt-2">
+                    <a href="#" class="text-green-300 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-green-300 hover:text-white"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-green-300 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-green-800 mt-4 pt-4 text-center text-sm text-green-200">
+            &copy; 2025 Hamdard Foundation Bangladesh | All rights reserved.
+        </div>
+    </footer>
+    
+    <script>
+        // Navigation functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mobileMenuClose = document.getElementById('mobile-menu-close');
+            const navMenu = document.getElementById('nav-menu');
+            const overlay = document.getElementById('overlay');
+            
+            // Toggle mobile menu
+            mobileMenuToggle.addEventListener('click', function() {
+                navMenu.classList.add('active');
+                overlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+            
+            // Close mobile menu
+            function closeMobileMenu() {
+                navMenu.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+            
+            mobileMenuClose.addEventListener('click', closeMobileMenu);
+            overlay.addEventListener('click', closeMobileMenu);
+            
+            // Dropdown functionality for desktop
+            const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+            
+            dropdownToggles.forEach(toggle => {
+                toggle.addEventListener('click', function(e) {
+                    if (window.innerWidth >= 1024) {
+                        e.preventDefault();
+                        const dropdown = this.nextElementSibling;
+                        const isOpen = dropdown.classList.contains('show');
+                        
+                        // Close all dropdowns
+                        document.querySelectorAll('.dropdown-menu').forEach(menu => {
+                            menu.classList.remove('show');
+                        });
+                        
+                        // Toggle current dropdown
+                        if (!isOpen) {
+                            dropdown.classList.add('show');
+                        }
+                    }
+                });
+            });
+            
+            // Close dropdowns when clicking outside
+            document.addEventListener('click', function(e) {
+                if (window.innerWidth >= 1024) {
+                    if (!e.target.closest('.nav-item')) {
+                        document.querySelectorAll('.dropdown-menu').forEach(menu => {
+                            menu.classList.remove('show');
+                        });
+                    }
+                }
+            });
+            
+            // Active navigation link based on scroll position
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            function updateActiveNavLink() {
+                let current = '';
+                const scrollY = window.pageYOffset;
+                
+                sections.forEach(section => {
+                    const sectionHeight = section.offsetHeight;
+                    const sectionTop = section.offsetTop - 100;
+                    
+                    if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+            
+            window.addEventListener('scroll', updateActiveNavLink);
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menu after clicking a link
+                        if (window.innerWidth < 1024) {
+                            closeMobileMenu();
+                        }
+                    }
+                });
+            });
+        });
+        
+        // Confetti animation
+        document.getElementById('celebrate-btn').addEventListener('click', function() {
+          const colors = ['#2e7d32', '#388e3c', '#4caf50', '#81c784', '#a5d6a7'];
+          const container = document.getElementById('confetti-container');
+          
+          // Clear previous confetti
+          container.innerHTML = '';
+          
+          // Create 50 confetti pieces
+          for (let i = 0; i < 50; i++) {
+            const confetti = document.createElement('div');
+            confetti.className = 'confetti';
+            confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            confetti.style.left = Math.random() * 100 + 'vw';
+            confetti.style.top = '-10px';
+            confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+            confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+            container.appendChild(confetti);
+            
+            // Animate each confetti piece
+            gsap.to(confetti, {
+              y: window.innerHeight + 10,
+              x: (Math.random() - 0.5) * 200,
+              opacity: 1,
+              duration: 2 + Math.random() * 3,
+              ease: 'power1.out',
+              onComplete: () => {
+                confetti.remove();
+              }
+            });
+          }
+          
+          // Bounce animation for the button
+          gsap.to(this, {
+            y: -10,
+            duration: 0.2,
+            yoyo: true,
+            repeat: 1,
+            ease: 'power1.inOut'
+          });
+        });
+        
+        // Animate leadership cards on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+          const cards = document.querySelectorAll('.leader-card');
+          
+          cards.forEach((card, index) => {
+            gsap.from(card, {
+              y: 50,
+              opacity: 0,
+              duration: 0.8,
+              delay: index * 0.2,
+              ease: 'back.out(1.7)'
+            });
+          });
+          
+          // Floating elements animation
+          gsap.to('.floating-cap', {
+            rotation: 360,
+            duration: 20,
+            repeat: -1,
+            ease: 'none'
+          });
+          
+          gsap.to('.floating-diploma', {
+            rotation: -360,
+            duration: 25,
+            repeat: -1,
+            ease: 'none'
+          });
+        });
+    </script>
+    
 </body>
 </html>

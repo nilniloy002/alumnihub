@@ -70,6 +70,7 @@ Route::get('/hiuam', [HomeController::class, 'Hiuam']);
 Route::get('/institutions', [HomeController::class, 'AllInstitutions']);
 Route::get('/health', [HomeController::class, 'Health']);
 Route::get('/philanthropic', [HomeController::class, 'Philanthropic']);
+Route::get('/about-hamdard-foundation', [HomeController::class, 'AboutHfb']);
 
 // Auth routes
 require __DIR__.'/auth.php';

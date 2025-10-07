@@ -1,41 +1,10 @@
-@extends('home.layouts.app')
+<!DOCTYPE html>
+<html lang="en">
+    @include('partials.head')
 
-@section('content')
-    <!-- Navigation -->
-    <nav class="bg-green-800 text-white shadow-lg">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <!-- Logo and Branding -->
-            <div class="flex items-center space-x-3">
-                <a href="/" class="flex items-center">
-                    <!-- Logo Image -->
-                    <img src="{{ asset('admin/favicon/logo-01.png') }}" 
-                        alt="HFB Logo" 
-                        class="h-20 w-auto">
-                    <!-- Text Logo/Brand Name -->
-                    <span class="hidden md:block">
-                        <h1 class="text-xl font-bold text-white leading-tight">Hamdard Insights</h1>
-                        <p class="text-lg text-green-100">Unified Educational Intelligence</p>
-                    </span>
-                </a>
-            </div>
-            <div class="hidden md:flex space-x-6">
-                <a href="#about" class="hover:text-green-200 transition">About</a>
-                <a href="#academic-journey" class="hover:text-green-200 transition">Journey</a>
-                <a href="#programs" class="hover:text-green-200 transition">Programs</a>
-                <a href="#facilities" class="hover:text-green-200 transition">Facilities</a>
-            </div>
-            <button class="md:hidden focus:outline-none" id="menu-toggle">
-                <i class="fas fa-bars text-2xl"></i>
-            </button>
-        </div>
-        <!-- Mobile Menu -->
-        <div class="md:hidden hidden px-4 pb-4" id="mobile-menu">
-            <a href="#about" class="block py-2 hover:text-green-200">About</a>
-            <a href="#programs" class="block py-2 hover:text-green-200">Programs</a>
-            <a href="#facilities" class="block py-2 hover:text-green-200">Facilities</a>
-            <a href="#contact" class="block py-2 hover:text-green-200">Contact</a>
-        </div>
-    </nav>
+<body class="bg-gradient-to-br from-green-50 to-green-100 font-sans">
+    <!-- Header -->
+    @include('partials.header')
 
     <!-- Hero Slider Section -->
     <div class="relative overflow-hidden" style="height: 80vh; max-height: 800px;">
@@ -51,7 +20,7 @@
                     <div>
                         <h1 class="text-4xl md:text-6xl font-bold mb-4 text-white">Rawshan Jahan Eastern Medical College</h1>
                         <p class="text-xl md:text-2xl mb-8 text-white">"A sound mind lies in a sound body"</p>
-                        <a href="#programs" class="bg-white text-green-800 px-6 py-3 rounded-lg font-semibold hover:bg-green-100 transition inline-block">Explore Programs</a>
+                        <a href="https://rjemch.edu.bd/" target="_blank" class="bg-white text-green-800 px-6 py-3 rounded-lg font-semibold hover:bg-green-100 transition inline-block">Explore the Website</a>
                     </div>
                 </div>
             </div>
@@ -560,7 +529,10 @@
         </div>
     </section>
 
-    @push('scripts')
+   
+       <!-- Footer -->
+       @include('partials.footer')
+        @push('scripts')
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const slides = document.querySelectorAll('[data-slide]');
@@ -659,5 +631,5 @@
             }
         }
     </style>
-    @endpush
-@endsection
+</body>
+</html>
