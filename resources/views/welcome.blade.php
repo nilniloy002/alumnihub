@@ -336,58 +336,7 @@
         </div>
     </section>
     
-    <!-- Contact Section -->
-    <section id="contact" class="py-16 bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center text-dark mb-8">Contact Us</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                    <h3 class="text-xl font-bold text-primary mb-4">Get In Touch</h3>
-                    <div class="space-y-4">
-                        <div class="flex items-start">
-                            <i class="fas fa-map-marker-alt text-primary mt-1 mr-3"></i>
-                            <div>
-                                <h4 class="font-bold">Head Office</h4>
-                                <p class="text-gray-700">Hamdard Foundation Bangladesh<br>Hamdard Center, 96, Bir Uttam C.R. Datta Road<br>Dhaka-1205, Bangladesh</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <i class="fas fa-phone text-primary mt-1 mr-3"></i>
-                            <div>
-                                <h4 class="font-bold">Phone</h4>
-                                <p class="text-gray-700">+880 2 9670211-4</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <i class="fas fa-envelope text-primary mt-1 mr-3"></i>
-                            <div>
-                                <h4 class="font-bold">Email</h4>
-                                <p class="text-gray-700">info@hamdardfoundation.org</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <h3 class="text-xl font-bold text-primary mb-4">Send Us a Message</h3>
-                    <form class="space-y-4">
-                        <div>
-                            <label for="name" class="block text-gray-700 mb-1">Full Name</label>
-                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
-                        </div>
-                        <div>
-                            <label for="email" class="block text-gray-700 mb-1">Email Address</label>
-                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
-                        </div>
-                        <div>
-                            <label for="message" class="block text-gray-700 mb-1">Message</label>
-                            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
-                        </div>
-                        <button type="submit" class="bg-primary hover:bg-dark text-white font-medium py-2 px-6 rounded-md transition duration-300">Send Message</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+ 
 
     <!-- Leadership Messages Section -->
 <section id="leadership-messages" class="py-16 bg-gradient-to-br from-green-50 to-white">
@@ -537,6 +486,59 @@
                 <div class="masonry-item">
                     <img src="{{ asset('images/gallery/9.jpg') }}" 
                         class="rounded-lg shadow-md w-full h-auto" alt="Campus Grounds">
+                </div>
+            </div>
+        </div>
+    </section>
+
+       <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-dark mb-8">Contact Us</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold text-primary mb-4">Get In Touch</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-primary mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-bold">Head Office</h4>
+                                <p class="text-gray-700">Hamdard Foundation Bangladesh<br>Hamdard Center, 96, Bir Uttam C.R. Datta Road<br>Dhaka-1205, Bangladesh</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-phone text-primary mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-bold">Phone</h4>
+                                <p class="text-gray-700">+880 2 9670211-4</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-envelope text-primary mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-bold">Email</h4>
+                                <p class="text-gray-700">info@hamdardfoundation.org</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-primary mb-4">Send Us a Message</h3>
+                    <form class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-gray-700 mb-1">Full Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-700 mb-1">Email Address</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-gray-700 mb-1">Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+                        </div>
+                        <button type="submit" class="bg-primary hover:bg-dark text-white font-medium py-2 px-6 rounded-md transition duration-300">Send Message</button>
+                    </form>
                 </div>
             </div>
         </div>
